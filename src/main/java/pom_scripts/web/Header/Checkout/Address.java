@@ -58,24 +58,18 @@ public class Address extends BasePage {
 	public WebElement getUse_Current_Location_link() {
 		return Use_Current_Location_link;
 	}
-	
-
 	//Mobile_Number_textfield
 	@FindBy(xpath = "//input[@name='phone']")
 	private WebElement Mobile_Number_textfield;
 	public WebElement getMobile_Number_textfield() {
 		return Mobile_Number_textfield;
 	}
-	
-
 	//PINCODE_textfield
 	@FindBy(xpath = "//input[@name=\"postcode\"]")
 	private WebElement PINCODE_textfield;
 	public WebElement getPINCODE_textfield() {
 		return PINCODE_textfield;
 	}
-	
-
 	//House_no__Building_name_textfield
 	@FindBy(xpath = "//input[@name=\"building\"]")
 	private WebElement House_no__Building_name_textfield;

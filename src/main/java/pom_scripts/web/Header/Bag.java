@@ -20,6 +20,15 @@ public class Bag extends BasePage {
 	public WebElement getMy_Bag_Page_text() {
 		return My_Bag_Page_text;
 	}
+	
+
+	//MyBagBagPopUp_text
+	@FindBy(xpath = "//div[contains(@class,'mini-cart-bag')]")
+	private WebElement MyBagBagPopUp_text;
+
+	public WebElement getMyBagBagPopUp_text() {
+		return MyBagBagPopUp_text;
+	}
 
 	// ProductName_Bag_text
 	@FindBy(xpath = "//div[contains(@class,'Cart_name')]")
@@ -30,7 +39,8 @@ public class Bag extends BasePage {
 	}
 
 	// Product_Actual_Price_text
-	@FindBy(xpath = "//div[contains(@class,'Cart_price')]")
+	//div[contains(@class,"Cart_price") and contains(text(),'₹')]
+	@FindBy(xpath = "//div[contains(@class,\"Cart_price\") and contains(text(),'₹')]")
 	private WebElement Product_Actual_Price_text;
 
 	public WebElement getProduct_Actual_Price_text() {

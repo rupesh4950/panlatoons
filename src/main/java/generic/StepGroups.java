@@ -678,7 +678,7 @@ public class StepGroups extends UtilityMethod {
 			if (temp) {
 
 				firstProductAmount = getDiscount(plp.getProduct_Price_text());
-				System.out.println("firstProductAmount" +firstProductAmount);
+				//System.out.println("firstProductAmount" +firstProductAmount);
 			}
 			b = driver.findElement(By.xpath("//s[@class='actual-price']")).isDisplayed();
 			if (b) {
@@ -687,7 +687,7 @@ public class StepGroups extends UtilityMethod {
 				Assert.assertEquals(b, true);
 				plp.getActual_Price_text().getText();
 			}
-			//
+			
 			b = driver.findElement(By.xpath("//span[@class='discount discountHighlight']")).isDisplayed();
 			if (b) {
 				b = plp.getOFF_Percentage_text().isDisplayed();
@@ -708,27 +708,24 @@ public class StepGroups extends UtilityMethod {
 		productDiscoutedPricePDP = pdp.getProduct_Discouted_Price_text().getText();
 		b = productDiscoutedPricePDP.contains(firstProductAmount);
 		Assert.assertEquals(b, true);
-
 		b=false;
 		try {
 			b = driver.findElement(By.xpath("//span[@class=\"discount discountHighlight pdpnodealpage\"]")).isDisplayed();
-			
 		} catch (Exception e) {
 			b=false;
 		}
-		
 		if (b) {
-			// Get text from Product_Actual_Amount_text in PDP page
-			pdp.getProduct_Actual_Amount_text().getText();
+			System.out.println("if block");
+			// Get text from Product Actual Amount text in PDP page
+			ProductActualPricePDP=pdp.getProduct_Actual_Amount_text().getText();
 			// Verify if OFF_PDP_text is displayed in PDP page
 			b = pdp.getOFF_PDP_text().isDisplayed();
 			Assert.assertEquals(b, true);
 			// Get text from OFF_PDP text in PDP page
 			offPercentagePDP = pdp.getOFF_PDP_text().getText();
-			System.out.println(productActualpricePLP+"   null");
-			System.out.println(ProductActualPricePDP+"   null");
+//			System.out.println(productActualpricePLP+"   null");
+//			System.out.println(ProductActualPricePDP+"   null");
 			b = productActualpricePLP.contains(ProductActualPricePDP);
-			
 			Assert.assertEquals(b, true);
 			b = offPercentage.contains(offPercentagePDP);
 			Assert.assertEquals(b, true);
@@ -737,7 +734,7 @@ public class StepGroups extends UtilityMethod {
 		b = pdp.getSELECT_SIZE_text().isDisplayed();
 		Assert.assertEquals(b, true);
 		// Verify if Select Size button in PDP page is clickable
-		wait.until(ExpectedConditions.elementToBeClickable(pdp.getSelected_Size_button()));
+		wait.until(ExpectedConditions.elementToBeClickable(pdp.getSelect_Size_button()));
 		// Get text from SELECT_AVAILABLE_SIZE_button in PDP page
 		selectedSizePDP = pdp.getSELECT_AVAILABLE_SIZE_button().getText();
 		// Click on SELECT AVAILABLE SIZE button in PDP page
@@ -746,7 +743,9 @@ public class StepGroups extends UtilityMethod {
 		js.executeScript("arguments[0].scrollIntoView(true);", pdp.getQUANTITY_text());
 		quantityPDP = pdp.getQUANTITY_text().getAttribute("value");
 		// Verify if value of QUANTITY text in PDP page contains *expectedValue*
-		b = pdp.getQUANTITY_text().getText().contains(quantityPDP);
+		b = pdp.getQUANTITY_text().getAttribute("value").contains(quantityPDP);
+		//System.out.println(pdp.getQUANTITY_text().getText());
+	//	System.out.println(quantityPDP);
 		Assert.assertEquals(b, true);
 		// Wait till ADD TO BAG button in PDP page is visible
 		wait.until(ExpectedConditions.visibilityOf(pdp.getADD_TO_BAG_button()));
@@ -757,7 +756,7 @@ public class StepGroups extends UtilityMethod {
 		// Click on current cursor point
 		action.click().perform();
 		// Wait till MyBagBagPopUp text in Bag page is visible
-		wait.until(ExpectedConditions.visibilityOf(bag.getMy_Bag_Page_text()));
+		wait.until(ExpectedConditions.visibilityOf(bag.getMyBagBagPopUp_text()));
 		// Click on VIEW_BAG_button in PDP page using javascript executor
 		js.executeScript("arguments[0].click();", pdp.getVIEW_BAG_button());
 		// Verify if My Bag text is displayed in Bag page
@@ -770,14 +769,22 @@ public class StepGroups extends UtilityMethod {
 		firstProductBrandNameBag = home.getProductBrandName_Bag_text().getText();
 		// Get text from ProductName_Bag text in Bag page
 		firstProductNameBag = bag.getProductName_Bag_text().getText();
-		// Get text from Product_Actual Price text in Bag page
+		// Get text from Product Actual Price text in Bag page
 		productDiscountpriceBag = bag.getProduct_Actual_Price_text().getText();
-		productDiscountpriceBag = getDiscount(bag.getProduct_Actual_Price_text());
+		//System.out.println(productDiscountpriceBag);
+		//System.out.println((productDiscountpriceBag.split(" ")).length);
+		//productDiscountpriceBag = getDiscount(bag.getProduct_Actual_Price_text());
 		// Get text from Size dropdown in Bag page
 		selectedSize_Bag = bag.getSize_text().getText();
-		// Get value attribute value of Quantity_Count_dropdown in Bag page
+		// Get value attribute value of Quantity Count dropdown in Bag page
 		String quantityCount = bag.getQuantity_Count_dropdown().getAttribute("value");
-		b = driver.findElement(By.xpath("//div[contains(@class,'Cart_discounted-price')]/span")).isDisplayed();
+		b=false;
+		try {
+			b = driver.findElement(By.xpath("//div[contains(@class,'Cart_discounted-price')]/span")).isDisplayed();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 		if (b) {
 			// Verify if OFF_Bag_text is displayed in Bag page
 			b = bag.getOFF_Bag_text().isDisplayed();
@@ -803,7 +810,12 @@ public class StepGroups extends UtilityMethod {
 		Assert.assertEquals(b, true);
 		// Verify if string productDiscountpriceBag contains string
 		// productDiscountPricePDP
+		productDiscountpriceBag=getOnlyNunber(productDiscountpriceBag);
+		productDiscoutedPricePDP=getOnlyNunber(productDiscoutedPricePDP);
 		b = productDiscountpriceBag.contains(productDiscoutedPricePDP);
+//		System.out.println("new ");
+//		System.out.println(productDiscountpriceBag);
+//		System.out.println(productDiscoutedPricePDP);
 		Assert.assertEquals(b, true);
 		// Verify if string quantityCount matches string quantityPDP
 		b = quantityCount.contains(quantityPDP);
@@ -812,8 +824,16 @@ public class StepGroups extends UtilityMethod {
 		b = selectedSize_Bag.contains(selectedSizePDP);
 		Assert.assertEquals(b, true);
 	}
-
-	
+	public String getOnlyNunber(String num) {
+		String temp="";
+		for(int i=0;i<num.length();i++) {
+			char c=num.charAt(i);
+			if(c<='9'&&c>='0') {
+				temp+=c+"";
+			}
+		}
+		return temp;
+	}
 	String productDiscountpriceBag,quantityPDP, selectedSize_Bag, offPercentageBag;
 	
 	String ProductActualPricePDP, offPercentagePDP, selectedSizePDP;

@@ -18,7 +18,8 @@
 			<class name="test_Scripts.PLP_Web.PLP075"></class>
 			<class name="test_Scripts.PLP_Web.PLP091"></class>
 			<!-- 5-->
-			<!-- total 12-->
+			<class name="test_Scripts.My_Bag_Web.MB016"></class>
+			<!-- total 13-->
 			<class name="test_Scripts.PLP_Web.PLP060"></class>
 			<class name="test_Scripts.PDP_Web.PDP005"></class>
 			<class name="test_Scripts.PDP_Web.PDP034" />

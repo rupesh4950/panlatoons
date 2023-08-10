@@ -56,11 +56,11 @@ public class Base_Test extends UtilityMethod{
 		initObjects();
 	}
 	
-	@AfterClass
-	public void CloseApp() {
-		driver.quit();
-		test.log(LogStatus.INFO,"End Test");
-	}
+//	@AfterClass
+//	public void CloseApp() {
+//		driver.quit();
+//		test.log(LogStatus.INFO,"End Test");
+//	}
 	@AfterSuite
 	public void afterSuite() {
 		report.endTest(test);

@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test_Scripts.PLP_Web.PLP060">
+      <class name="test_Scripts.My_Bag_Web.MB016">
         <methods>
-          <include name="beforeSuite"/>
           <include name="afterSuite"/>
-          <include name="main"/>
           <include name="browserSetup"/>
+          <include name="main"/>
+          <include name="beforeSuite"/>
         </methods>
-      </class> <!-- test_Scripts.PLP_Web.PLP060 -->
+      </class> <!-- test_Scripts.My_Bag_Web.MB016 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

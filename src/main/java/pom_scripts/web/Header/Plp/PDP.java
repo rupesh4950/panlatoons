@@ -65,8 +65,15 @@ public class PDP  extends BasePage{
 	public WebElement getSelected_Size_button() {
 		return Selected_Size_button;
 	}
+	//Select_Size_button
+	//div[contains(@class,"size size-web") and not(contains(@class,"not-available"))]/span
+	@FindBy(xpath="//div[contains(@class,\"size size-web\") and not(contains(@class,\"not-available\"))]/span")
+	private WebElement Select_Size_button;
+	public WebElement getSelect_Size_button() {
+		return Select_Size_button;
+	}
 	//QUANTITY_text
-	@FindBy(xpath="//div[contains(@class,\"quantity-input\")]//input")
+	@FindBy(xpath="//div[contains(@class,'quantity-input')]//input")
 	private WebElement QUANTITY_text;
 	public WebElement getQUANTITY_text() {
 		return QUANTITY_text;
@@ -98,6 +105,7 @@ public class PDP  extends BasePage{
 	}
 	
 	//SELECT_SIZE_text
+	//div[text()='SELECT SIZE']
 	@FindBy(xpath="//div[text()='SELECT SIZE']")
 	private WebElement SELECT_SIZE_text;
 	public WebElement getSELECT_SIZE_text() {
@@ -105,7 +113,7 @@ public class PDP  extends BasePage{
 	}
 	
 	//SELECT_AVAILABLE_SIZE_button
-	@FindBy(xpath="//div[contains(text(),'SELECT SIZE')]")
+	@FindBy(xpath="//div[contains(@class,\"size size-web\") and not(contains(@class,\"not-available\"))]/span")
 	private WebElement SELECT_AVAILABLE_SIZE_button;
 	public WebElement getSELECT_AVAILABLE_SIZE_button() {
 		return SELECT_AVAILABLE_SIZE_button;
