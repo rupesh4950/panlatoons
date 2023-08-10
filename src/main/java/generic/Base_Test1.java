@@ -25,7 +25,7 @@ public class Base_Test1 extends UtilityMethod{
 	
 	@BeforeSuite
 	public void beforeSuite(){
-		report=new ExtentReports(REPORTS_PATH+name()+".html");
+		report=new ExtentReports(REPORTS_PATH+name()+".pdf");
 		test=report.startTest(TEST_NAME);
 	}
 	

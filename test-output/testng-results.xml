@@ -8,20 +8,20 @@
       <![CDATA[AND]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-08-10T15:55:59 IST" name="Default suite" finished-at="2023-08-10T15:56:57 IST" duration-ms="57706">
+  <suite started-at="2023-08-10T16:19:29 IST" name="Default suite" finished-at="2023-08-10T16:20:26 IST" duration-ms="57532">
     <groups>
     </groups>
-    <test started-at="2023-08-10T15:55:59 IST" name="Default test" finished-at="2023-08-10T15:56:57 IST" duration-ms="57706">
+    <test started-at="2023-08-10T16:19:29 IST" name="Default test" finished-at="2023-08-10T16:20:26 IST" duration-ms="57532">
       <class name="test_Scripts.My_Bag_Web.MB016">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T15:55:59 IST" name="beforeSuite" finished-at="2023-08-10T15:55:59 IST" duration-ms="270" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T16:19:28 IST" name="beforeSuite" finished-at="2023-08-10T16:19:29 IST" duration-ms="277" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T15:55:59 IST" name="browserSetup" finished-at="2023-08-10T15:56:07 IST" duration-ms="7256" status="PASS">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T16:19:29 IST" name="browserSetup" finished-at="2023-08-10T16:19:35 IST" duration-ms="6275" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="main()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T15:56:07 IST" name="main" finished-at="2023-08-10T15:56:57 IST" duration-ms="50389" status="PASS">
+        <test-method signature="main()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T16:19:35 IST" name="main" finished-at="2023-08-10T16:20:26 IST" duration-ms="51167" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Light Blue Print Top]]>
@@ -31,7 +31,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- main -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T15:56:57 IST" name="afterSuite" finished-at="2023-08-10T15:56:58 IST" duration-ms="391" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T16:20:26 IST" name="afterSuite" finished-at="2023-08-10T16:20:27 IST" duration-ms="400" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
