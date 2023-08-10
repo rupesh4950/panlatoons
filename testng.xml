@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="1" name="Test" parallel="true">
+    <classes>
+      <class name="test_Scripts.HM001"/>
+      <class name="test_Scripts.HM002"/>
+      <class name="test_Scripts.HM022"/>
+      <class name="test_Scripts.HM055"/>
+      <class name="test_Scripts.SE002"/>
+      <!-- 5-->
+      <class name="test_Scripts.PDP_Web.PDP045"/>
+      <class name="test_Scripts.PDP_Web.PDP058"/>
+      <!-- 2-->
+      <class name="test_Scripts.PLP_Web.PLP007"></class>
+      <class name="test_Scripts.PLP_Web.PLP020"></class>
+      <class name="test_Scripts.PLP_Web.PLP050"></class>
+      <class name="test_Scripts.PLP_Web.PLP075"></class>
+       <class name="test_Scripts.PLP_Web.PLP091"></class>
+       <!-- 5-->
+       <!-- total 12-->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
