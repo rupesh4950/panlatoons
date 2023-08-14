@@ -22,6 +22,7 @@ public class MB011 extends Base_Test1 {
 
 	@Test
 	public void main() throws Exception {
+		className="MB011";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -79,6 +80,7 @@ public class MB011 extends Base_Test1 {
 		//Sorry__this_coupon_code_is_not_valid
 		b=bag.getSorry__this_coupon_code_is_not_valid_text().isDisplayed();
 		Assert.assertEquals(b, true);
+		bool=true;
 	}
 
 }

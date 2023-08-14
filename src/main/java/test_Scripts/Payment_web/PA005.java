@@ -26,6 +26,7 @@ public class PA005 extends Base_Test1 {
 
 	@Test
 	public void main() throws Exception {
+		className="PA005";
 		Address address = new Address(driver);
 		Home home = new Home(driver);
 		Header header = new Header(driver);
@@ -78,6 +79,7 @@ public class PA005 extends Base_Test1 {
 		//Verify if paytm logo image is displayed in PLP page
 		b=plp.getpaytm_logo().isDisplayed();
 		Assert.assertEquals(true, b);
+		bool=true;
 	}
 
 }

@@ -161,7 +161,7 @@ public class PLP extends BasePage {
 		return Product_Price_text;
 	}
 	// getWishlist_icon
-	@FindBy(xpath = "//div[contains(@class,\"PlpWeb_product-image\")]/../..//button[@type='button']")
+	@FindBy(xpath = "//div[contains(@class,'PlpWeb_product-image')]/../..//button[@type='button']")
 	private WebElement Wishlist_icon;
 	public WebElement getWishlist_icon() {
 		return Wishlist_icon;

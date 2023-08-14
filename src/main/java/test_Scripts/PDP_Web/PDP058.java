@@ -22,6 +22,7 @@ public class PDP058 extends Base_Test
 
 	@Test
 	public void main() throws Exception {
+		className="PDP058";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -83,6 +84,7 @@ public class PDP058 extends Base_Test
 //		System.out.println(productbrand);
 //		System.out.println(productname);
 		sg.checkValues(productbrand,productname);
+		bool=true;
 		
 	}
 }

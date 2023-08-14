@@ -56,7 +56,7 @@ public class Quick_View extends BasePage {
 		return Available_Size_button;
 	}
 	//ADD_TO_BAG_button
-	@FindBy(xpath = "//button[contains(@class,\"add-to-bag-button\")]")
+	@FindBy(xpath = "//button[contains(@class,'add-to-bag-button')]")
 	private WebElement ADD_TO_BAG_button;
 
 	public WebElement getADD_TO_BAG_button() {

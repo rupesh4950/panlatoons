@@ -19,6 +19,7 @@ import pom_scripts.web.Header.Plp.PDP;
 public class PDP034 extends Base_Test1{
 	@Test
 	public void main() throws Exception {
+		className="PDP034";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -63,5 +64,6 @@ public class PDP034 extends Base_Test1{
 		sg.Get_Product_Details_in_Wishlist();
 	//Verify if string productBrandWishlist matches string ProductBrandPDP
 		sg.verfiyforPDP034();
+		bool=true;
 	}
 }

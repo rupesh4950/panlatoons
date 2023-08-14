@@ -22,6 +22,7 @@ import pom_scripts.web.Header.Plp.Quick_View;
 public class WSL029 extends Base_Test {
 	@Test(priority = 1)
 	public void main() throws Exception, Exception {
+		className="WSL029";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -66,6 +67,7 @@ public class WSL029 extends Base_Test {
 		}
 		//Verify if REMOVE_FROM_WISHLIST_text is displayed in PDP page
 		pdp.getREMOVE_FROM_WISHLIST_text().isDisplayed();
+		bool=true;
 		
 	}
 

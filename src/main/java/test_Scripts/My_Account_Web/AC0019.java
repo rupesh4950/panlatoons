@@ -25,6 +25,7 @@ public class AC0019 extends Base_Test1 {
 
 	@Test
 	public void main() throws Exception {
+		className="AC0019";
 		Address address = new Address(driver);
 		Home home = new Home(driver);
 		My_Orders myOrder=new My_Orders(driver);
@@ -52,6 +53,7 @@ public class AC0019 extends Base_Test1 {
 		// Move mouse pointer on Pantaloons Logo image in Home page
 		action.moveToElement(home.getPantaloons_Logo()).perform();
 		// Move mouse pointer on First Product image in PLP page
+		wait.until(ExpectedConditions.elementToBeClickable(plp.getFirst_Product_Image()));
 		action.moveToElement(plp.getFirst_Product_Image()).perform();
 		// Verify if QUICK VIEW button is displayed in PLP page
 		boolean b = plp.getQUICK_VIEW_button().isDisplayed();
@@ -96,6 +98,7 @@ public class AC0019 extends Base_Test1 {
 		//Click on Skip_Feedback_button in Paytm page
 		payment.getSkip_Feedback_button().click();
 		//Wait till Pantaloons image in Header page is clickable
+		wait.until(ExpectedConditions.visibilityOf(header.getPantaloons()));
 		wait.until(ExpectedConditions.elementToBeClickable(header.getPantaloons()));
 		//Click on Pantaloons image in Header page
 		header.getPantaloons().click();
@@ -116,7 +119,7 @@ public class AC0019 extends Base_Test1 {
 		//Verify if Ordered_Product_image is displayed in My Orders page
 		b=myOrder.getOrdered_Product_image().isDisplayed();
 		Assert.assertEquals(b, true);
-		
+		bool=true;
 	}
 
 }

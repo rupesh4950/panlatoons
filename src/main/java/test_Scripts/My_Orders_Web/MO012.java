@@ -26,6 +26,7 @@ import pom_scripts.web.Header.Plp.Quick_View;
 public class MO012 extends Base_Test1 {
 	@Test(priority = 1)
 	public void main() throws Exception, Exception {
+		className="MO012";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -81,6 +82,7 @@ public class MO012 extends Base_Test1 {
 	//	System.out.println(driver.findElement(By.xpath("//div[contains(@class,'order_order-summary-header')]")).isDisplayed());
 		b=myOrder.getproduct_order_number_text().isDisplayed();
 		Assert.assertEquals(b, true);
+		bool=true;
 	}
 
 }

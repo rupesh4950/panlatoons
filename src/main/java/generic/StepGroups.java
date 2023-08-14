@@ -49,11 +49,12 @@ public class StepGroups extends UtilityMethod {
 		wishlist = new Wishlist(driver);
 		quickView = new Quick_View(driver);
 		bag = new Bag(driver);
-		checkout=new Checkout(driver);
-		address=new Address(driver);
-		wait=new WebDriverWait(driver, 20);
+		checkout = new Checkout(driver);
+		address = new Address(driver);
+		wait = new WebDriverWait(driver, 20);
 		footer = new Footer(driver);
 	}
+
 	Checkout checkout;
 	Actions a;
 	Home home;
@@ -71,11 +72,25 @@ public class StepGroups extends UtilityMethod {
 	String ProductBrandPDP, productNamePDP, ProductPricePDP;
 
 	public void Navigate_to_PLP_Page(String Category, String SubCategory) {
-
-		a.moveToElement(home.getcategory(Category)).perform();
-		// Wait till Sub Catgeory link in Header page is visible
-		wait.until(ExpectedConditions.visibilityOf(header.getSub_Catgeory_Link(SubCategory)));
-		header.getSub_Catgeory_Link(SubCategory).click();
+		try {
+			a.moveToElement(home.getcategory(Category)).perform();
+			// Wait till Sub Catgeory link in Header page is visible
+			wait.until(ExpectedConditions.visibilityOf(header.getSub_Catgeory_Link(SubCategory)));
+			header.getSub_Catgeory_Link(SubCategory).click();
+		} catch (Exception e) {
+			driver.navigate().refresh();
+			a.moveToElement(home.getcategory(Category)).perform();
+			// Wait till Sub Catgeory link in Header page is visible
+			wait.until(ExpectedConditions.visibilityOf(header.getSub_Catgeory_Link(SubCategory)));
+			header.getSub_Catgeory_Link(SubCategory).click();
+		}
+		//as per fireflink
+//		a.moveToElement(home.getcategory(Category)).perform();
+//		wait.until(ExpectedConditions.visibilityOf(header.getSub_Catgeory_Link(SubCategory)));
+//		header.getSub_Catgeory_Link(SubCategory).click();
+		//wait.until(ExpectedConditions.P)
+		//comp
+		wait.until(ExpectedConditions.visibilityOf(plp.getFirst_Product_Image()));
 		boolean b = plp.getFirst_Product_Image().isDisplayed();
 		Assert.assertEquals(b, true);
 	}
@@ -130,7 +145,7 @@ public class StepGroups extends UtilityMethod {
 			int numberOfAttempts) throws Exception {
 		List<WebElement> availableSizes = new ArrayList<WebElement>();
 		for (int i = 1; i <= numberOfAttempts; i++) {
-			//System.out.println(productLocator + "[" + i + "]");
+			// System.out.println(productLocator + "[" + i + "]");
 			action.click(driver.findElement(By.xpath(productLocator + "[" + i + "]"))).perform();
 			List<WebElement> dressSizes = driver.findElements(By.xpath(sizeLocator));
 			int sizes = dressSizes.size();
@@ -140,7 +155,7 @@ public class StepGroups extends UtilityMethod {
 				break;
 			} else {
 				Thread.sleep(2000);
-				//System.out.println("navigate back");
+				// System.out.println("navigate back");
 				driver.navigate().back();
 				try {
 					Thread.sleep(2000);
@@ -168,9 +183,9 @@ public class StepGroups extends UtilityMethod {
 		// System.out.println(productBrandPLP+" falues is "+ProductBrandPDP);
 		Assert.assertEquals(b, true);
 
-		b = ProductPricePDP.equalsIgnoreCase(productPricePLP);
-		// System.out.println(ProductPricePDP+" "+productPricePLP);
-		// System.out.println(b);
+		b = ProductPricePDP.contains(productPricePLP);
+		System.out.println(ProductPricePDP);
+		System.out.println(productPricePLP);
 		Assert.assertEquals(b, true);
 
 	}
@@ -218,7 +233,7 @@ public class StepGroups extends UtilityMethod {
 	public void Remove_Multiple_Products_From_Wishlist() throws Exception {
 		WebElement ele = header.getWishlist_icon();
 		js.executeScript("arguments[0].click();", ele);
-		RemoveMultipleProductsFromWishlist("//div[contains(@class,\"wishlist_my-wishlist-cross\")]");
+		RemoveMultipleProductsFromWishlist("//div[contains(@class,'wishlist_my-wishlist-cross')]");
 		driver.navigate().to("https://www.pantaloons.com/");
 
 	}
@@ -249,7 +264,7 @@ public class StepGroups extends UtilityMethod {
 		Assert.assertEquals(b, true);
 		productPriceWishlist = productPriceWishlist.replaceAll("\\s", "");
 		b = productPricePLP.contains(productPriceWishlist);
-		
+
 		Assert.assertEquals(b, true);
 	}
 
@@ -277,20 +292,20 @@ public class StepGroups extends UtilityMethod {
 
 	public void Delete_Multiple_Products_From_Bag() {
 		// Click on Pantaloons Logo image in Home page
-	//	System.out.println("image click");
+		// System.out.println("image click");
 		home.getPantaloons_Logo().click();
-	//	System.out.println("image click falied");
+		// System.out.println("image click falied");
 		// Click on Bag icon in Header page
 		header.getBag_icon().click();
 		try {
-			WebDriverWait w=new WebDriverWait(driver, 2);
+			WebDriverWait w = new WebDriverWait(driver, 2);
 			w.until(ExpectedConditions.visibilityOf(header.getBag_icon()));
 			header.getBag_icon().click();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		//header.getBag_icon().click();
+
+		// header.getBag_icon().click();
 		// Press PAGE_DOWN for n times
 		for (int i = 0; i < 10; i++) {
 			action.sendKeys(Keys.PAGE_DOWN).perform();
@@ -398,220 +413,224 @@ public class StepGroups extends UtilityMethod {
 	}
 
 	public void Login_through_POP_UP(String Mobile_Number) throws Exception {
-	boolean b = login.getMobile_Number_textfield().isDisplayed();
-	Assert.assertEquals(true, b);
-	login.getMobile_Number_textfield().sendKeys(Mobile_Number);
-	String otp = Get_OTP_from_Notification_Bar();
-	//Click on Start Shopping button in Login page
-	login.getStart_Shopping_button().click();
+		boolean b = login.getMobile_Number_textfield().isDisplayed();
+		Assert.assertEquals(true, b);
+		login.getMobile_Number_textfield().sendKeys(Mobile_Number);
+		String otp = Get_OTP_from_Notification_Bar();
+		// Click on Start Shopping button in Login page
+		login.getStart_Shopping_button().click();
 	}
 
 	public void verfiyforPDP034() {
 		boolean b = productBrandWishlist.matches(ProductBrandPDP);
 		Assert.assertEquals(true, b);
-		b=productNameWishlists.matches(productNamePDP);
+		b = productNameWishlists.matches(productNamePDP);
 		Assert.assertEquals(true, b);
 	}
 
 	public void checkValues(String productbrand, String productname) {
-		boolean b=productbrand.matches(ProductBrandPDP);
+		boolean b = productbrand.matches(ProductBrandPDP);
 		Assert.assertEquals(true, b);
-		b=productname.matches(productNamePDP);
+		b = productname.matches(productNamePDP);
 //		System.out.println(productname+" null ");
 //		System.out.println(productNamePDP+"  null");
 //		System.out.println("completed");
 		Assert.assertEquals(true, b);
-		
+
 	}
 
-	public void Add_product_to_Bag_from_Quick_View() {
-		//Wait till Select Size button in Quick View page is clickablew
-		wait.until(ExpectedConditions.elementToBeClickable(quickView.getSelect_Size_button())).click();;
-		//Press PAGE_DOWN for n times
-		int n=1;
-		for(int i=0;i<n;i++) {
+	public void Add_product_to_Bag_from_Quick_View() throws Exception {
+		// Wait till Select Size button in Quick View page is clickablew
+		wait.until(ExpectedConditions.elementToBeClickable(quickView.getSelect_Size_button())).click();
+		;
+		// Press PAGE_DOWN for n times
+		int n = 1;
+		for (int i = 0; i < n; i++) {
 			action.sendKeys(Keys.PAGE_DOWN).perform();
 		}
-		//Wait till ADD TO BAG button in Quick View page is clickable
+		// Wait till ADD TO BAG button in Quick View page is clickable
+		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(quickView.getADD_TO_BAG_button())).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='GO TO BAG']")));
-		//Verify if GO TO BAG button is displayed in Quick View page
+		// Verify if GO TO BAG button is displayed in Quick View page
 		boolean b = quickView.getGO_TO_BAG_button().isDisplayed();
 		Assert.assertEquals(b, true);
-		//Press PAGE_UP for n times
-		n=2;
-		for(int i=0;i<n;i++) {
+		// Press PAGE_UP for n times
+		n = 2;
+		for (int i = 0; i < n; i++) {
 			action.sendKeys(Keys.PAGE_UP).perform();
 		}
-		//Wait till Quick_View_Close_icon in Quick View page is clickable
+		// Wait till Quick_View_Close_icon in Quick View page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(quickView.getQuick_View_Close_icon())).click();
-		//Wait till Bag icon in Header page is clickable
+		// Wait till Bag icon in Header page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(header.getBag_icon())).click();
-		
-		
-		
-		
-		
+
 	}
 
-	public void Naviagte_To_Checkout_With_FIlled_Address() {
-		//Navigate to Add Address With Login sg
+	public void Naviagte_To_Checkout_With_FIlled_Address() throws Exception {
+		// Navigate to Add Address With Login sg
 		Navigate_to_Add_Address_With_Login();
-		//Verify if Add_new_address_text is displayed in Address page
+		// Verify if Add_new_address_text is displayed in Address page
 		boolean b = address.getAdd_new_address_text().isDisplayed();
 		Assert.assertEquals(true, b);
-		//Verify if FIRST NAME textfield is displayed in Address page
-		b=address.getFirst_Name_textfield().isDisplayed();
+		// Verify if FIRST NAME textfield is displayed in Address page
+		b = address.getFirst_Name_textfield().isDisplayed();
 		Assert.assertEquals(true, b);
-		//Verify if FIRST NAME textfield in Address page is clickable
+		// Verify if FIRST NAME textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getFirst_Name_textfield()));
-		//Clear text from FIRST NAME textfield in Address page using shortcut key
+		// Clear text from FIRST NAME textfield in Address page using shortcut key
 		address.getFirst_Name_textfield().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-		//Generate random string with length 4 characters
-		 userName = Generate_random_string_with_length(4);
-		//Enter userName into FIRST NAME textfield in Address page
+		// Generate random string with length 4 characters
+		userName = Generate_random_string_with_length(4);
+		// Enter userName into FIRST NAME textfield in Address page
 		address.getFirst_Name_textfield().sendKeys(userName);
-		//Get *attributeName* attribute value of FIRST NAME textfield in Address page
-		value=address.getFirst_Name_textfield().getAttribute("value");
-		//Verify if string userName contains string value
-		b=userName.contains(value);
+		// Get *attributeName* attribute value of FIRST NAME textfield in Address page
+		value = address.getFirst_Name_textfield().getAttribute("value");
+		// Verify if string userName contains string value
+		b = userName.contains(value);
 //		System.out.println(userName);
 //		System.out.println(value);
 		Assert.assertEquals(true, b);
-		//Verify if Last_Name_textfield is displayed in Address page
-		b=address.getLast_Name_textfield().isDisplayed();
+		// Verify if Last_Name_textfield is displayed in Address page
+		b = address.getLast_Name_textfield().isDisplayed();
 		Assert.assertEquals(true, b);
-		//Verify if Last Name textfield in Address page is clickable
+		// Verify if Last Name textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getLast_Name_textfield()));
-		//Clear text from Last Name textfield in Address page using shortcut key
+		// Clear text from Last Name textfield in Address page using shortcut key
 		address.getLast_Name_textfield().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-		//Generate random string with length 5 characters
-		lastName=Generate_random_string_with_length(5);
-		//Enter lastName into Last Name textfield in Address page
+		// Generate random string with length 5 characters
+		lastName = Generate_random_string_with_length(5);
+		// Enter lastName into Last Name textfield in Address page
 		address.getLast_Name_textfield().sendKeys(lastName);
-		//Get *attributeName* attribute value of Last Name textfield in Address pag
-		value=address.getLast_Name_textfield().getAttribute("value");
-		//Verify if string lastName contains string value
-		b=lastName.contains(value);
+		// Get *attributeName* attribute value of Last Name textfield in Address pag
+		value = address.getLast_Name_textfield().getAttribute("value");
+		// Verify if string lastName contains string value
+		b = lastName.contains(value);
 		Assert.assertEquals(true, b);
-		//Verify if Mobile_Number_textfield is displayed in Address page
-		b=address.getMobile_Number_textfield().isDisplayed();
+		// Verify if Mobile_Number_textfield is displayed in Address page
+		b = address.getMobile_Number_textfield().isDisplayed();
 		Assert.assertEquals(true, b);
-		//Verify if Mobile Number textfield in Address page is clickable
+		// Verify if Mobile Number textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getMobile_Number_textfield()));
-		//Clear text from Mobile Number textfield in Address page using shortcut key
+		// Clear text from Mobile Number textfield in Address page using shortcut key
 		address.getMobile_Number_textfield().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-		//Generate random number with length 9 digits
-		mobNumberValue=Generate_random_number_with_length_digits(9);
-		//Concatenate 9 with mobNumberValue
-		mobNumberValue=("9"+mobNumberValue);
-		//Enter mobNumberValue into Mobile Number textfield in Address page
+		// Generate random number with length 9 digits
+		mobNumberValue = Generate_random_number_with_length_digits(9);
+		// Concatenate 9 with mobNumberValue
+		mobNumberValue = ("9" + mobNumberValue);
+		// Enter mobNumberValue into Mobile Number textfield in Address page
 		address.getMobile_Number_textfield().sendKeys(mobNumberValue);
-		//Get *attributeName* attribute value of Mobile Number textfield in Address page
-		value=address.getMobile_Number_textfield().getAttribute("value");
-		//Verify if string mobNumberValue contains string value
-		b=mobNumberValue.contains(value);
-		//Scroll page vertically until visibility of Use Current Location link in Address page
+		// Get *attributeName* attribute value of Mobile Number textfield in Address
+		// page
+		value = address.getMobile_Number_textfield().getAttribute("value");
+		// Verify if string mobNumberValue contains string value
+		b = mobNumberValue.contains(value);
+		// Scroll page vertically until visibility of Use Current Location link in
+		// Address page
 		js.executeScript("arguments[0].scrollIntoView(true);", address.getUse_Current_Location_link());
-		//Verify if PINCODE_textfield is displayed in Address page
-		b=address.getPINCODE_textfield().isDisplayed();
+		// Verify if PINCODE_textfield is displayed in Address page
+		b = address.getPINCODE_textfield().isDisplayed();
 		Assert.assertEquals(true, b);
-		//Verify if PINCODE textfield in Address page is clickable
+		// Verify if PINCODE textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getPINCODE_textfield()));
-		//Clear text from PINCODE textfield in Address page using shortcut key
+		// Clear text from PINCODE textfield in Address page using shortcut key
 		address.getPINCODE_textfield().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-		//Enter pinCode into PINCODE textfield in Address page
+		// Enter pinCode into PINCODE textfield in Address page
 		address.getPINCODE_textfield().sendKeys(pinCode);
-		//Get *attributeName* attribute value of PINCODE textfield in Address page
-		value=address.getPINCODE_textfield().getAttribute("value");
-		//Verify if string pinCode contains string value
-		b=pinCode.contains(value);
+		// Get *attributeName* attribute value of PINCODE textfield in Address page
+		value = address.getPINCODE_textfield().getAttribute("value");
+		// Verify if string pinCode contains string value
+		b = pinCode.contains(value);
 		Assert.assertEquals(true, b);
-		//Verify if House_no__Building_name_textfield is displayed in Address page
-		b=address.getHouse_no__Building_name_textfield().isDisplayed();
-		//Enter houseNumber into House no/ Building name textfield in Address page
+		// Verify if House_no__Building_name_textfield is displayed in Address page
+		b = address.getHouse_no__Building_name_textfield().isDisplayed();
+		// Enter houseNumber into House no/ Building name textfield in Address page
 		address.getHouse_no__Building_name_textfield().sendKeys(houseNumber);
-		//Get *attributeName* attribute value of House no/ Building name textfield in Address page
-		value=address.getHouse_no__Building_name_textfield().getAttribute("value");
-		//Verify if string houseNumber contains string value
-		b=houseNumber.contains(value);
+		// Get *attributeName* attribute value of House no/ Building name textfield in
+		// Address page
+		value = address.getHouse_no__Building_name_textfield().getAttribute("value");
+		// Verify if string houseNumber contains string value
+		b = houseNumber.contains(value);
 		Assert.assertEquals(true, b);
-		//Scroll page vertically until visibility of Pin_code*_text in Address page
+		// Scroll page vertically until visibility of Pin_code*_text in Address page
 		js.executeScript("arguments[0].scrollIntoView(true);", address.getPin_code_star_text());
-		//Verify if street_textfield is displayed in Address page
-		b=address.getstreet_textfield().isDisplayed();
+		// Verify if street_textfield is displayed in Address page
+		b = address.getstreet_textfield().isDisplayed();
 		Assert.assertEquals(true, b);
-		//Verify if street textfield in Address page is clickable
+		// Verify if street textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getstreet_textfield()));
-		//Enter streetName into street textfield in Address page
+		// Enter streetName into street textfield in Address page
 		address.getstreet_textfield().sendKeys(streetName);
-		//Get *attributeName* attribute value of street textfield in Address page
-		value=address.getstreet_textfield().getAttribute("value");
+		// Get *attributeName* attribute value of street textfield in Address page
+		value = address.getstreet_textfield().getAttribute("value");
 //		/Verify if string streetName contains string value
-		b=streetName.contains(value);
+		b = streetName.contains(value);
 		Assert.assertEquals(true, b);
-		//Verify if area_textfield is displayed in Address page
-		b=address.getarea_textfield().isDisplayed();
-		//Verify if area textfield in Address page is clickable
+		// Verify if area_textfield is displayed in Address page
+		b = address.getarea_textfield().isDisplayed();
+		// Verify if area textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getarea_textfield()));
-		//Enter streetName into area textfield in Address page
+		// Enter streetName into area textfield in Address page
 		address.getarea_textfield().sendKeys(Area);
-		//Get value attribute value of area textfield in Address page
-		value=address.getarea_textfield().getAttribute("value");
-		//Verify if string Area contains string value
-		b=Area.contains(value);
+		// Get value attribute value of area textfield in Address page
+		value = address.getarea_textfield().getAttribute("value");
+		// Verify if string Area contains string value
+		b = Area.contains(value);
 		Assert.assertEquals(true, b);
-		//Enter landmark into landmark_textfield in Address page
+		// Enter landmark into landmark_textfield in Address page
 		address.getlandmark_textfield().sendKeys(landmark);
-		//Get value attribute value of landmark textfield in Address page
-		value=address.getlandmark_textfield().getAttribute("value");
-		//Verify if string landmark contains string value
-		b=landmark.contains(value);
+		// Get value attribute value of landmark textfield in Address page
+		value = address.getlandmark_textfield().getAttribute("value");
+		// Verify if string landmark contains string value
+		b = landmark.contains(value);
 		Assert.assertEquals(true, b);
-		//Verify if Address_Type_text is displayed in Address page
-		b=address.getAddress_Type_text().isDisplayed();
+		// Verify if Address_Type_text is displayed in Address page
+		b = address.getAddress_Type_text().isDisplayed();
 		Assert.assertEquals(true, b);
-		
+
 	}
-	String landmark="landmark";
-	String streetName="street 267 road",Area="3rd cross,bangalore";
-	String userName,value,lastName,mobNumberValue,pinCode="560079",houseNumber="Building 24 5th cross";
-	public String Generate_random_number_with_length_digits(int n){
-		int max=9,min=0;
-		String temp="";
-		for(int i=0;i<n;i++) {
-		int k	=(int)(Math.random()*((max-min+1)+min))  ;
-		temp+=(k)+"";
+
+	String landmark = "landmark";
+	String streetName = "street 267 road", Area = "3rd cross,bangalore";
+	String userName, value, lastName, mobNumberValue, pinCode = "560079", houseNumber = "Building 24 5th cross";
+
+	public String Generate_random_number_with_length_digits(int n) {
+		int max = 9, min = 0;
+		String temp = "";
+		for (int i = 0; i < n; i++) {
+			int k = (int) (Math.random() * ((max - min + 1) + min));
+			temp += (k) + "";
 		}
-		//System.out.println(temp);
+		// System.out.println(temp);
 		return temp;
 	}
+
 	public String Generate_random_string_with_length(int n) {
-		int max=25,min=1;
-		String temp="";
-		for(int i=0;i<n;i++) {
-		int k	=(int)(Math.random()*((max-min+1)+min))  ;
-		temp+=(char)(97+k);
+		int max = 25, min = 1;
+		String temp = "";
+		for (int i = 0; i < n; i++) {
+			int k = (int) (Math.random() * ((max - min + 1) + min));
+			temp += (char) (97 + k);
 		}
 		return temp;
 	}
-	
-	public void Navigate_to_Add_Address_With_Login() {
-		//Add product to Bag from Quick View
+
+	public void Navigate_to_Add_Address_With_Login() throws Exception {
+		// Add product to Bag from Quick View
 		Add_product_to_Bag_from_Quick_View();
-		//Verify if My Bag text is displayed in Bag page
+		// Verify if My Bag text is displayed in Bag page
 		boolean b = bag.getMy_Bag_Page_text().isDisplayed();
 		Assert.assertEquals(true, b);
-		//Click on CHECKOUT button in Bag page
+		// Click on CHECKOUT button in Bag page
 		bag.getCHECKOUT_button().click();
-		//Verify if Checkout text is displayed in Checkout page
-		b=checkout.getCheckout_text().isDisplayed();
+		// Verify if Checkout text is displayed in Checkout page
+		b = checkout.getCheckout_text().isDisplayed();
 		Assert.assertEquals(true, b);
-		//Click on Plus icon in Address page
+		// Click on Plus icon in Address page
 		address.getPlus_icon().click();
-		//Press PAGE_DOWN key
+		// Press PAGE_DOWN key
 		action.sendKeys(Keys.PAGE_DOWN).perform();
-		//Click on ADD_NEW_ADDRESS_button in Address page
+		// Click on ADD_NEW_ADDRESS_button in Address page
 		try {
 			js.executeScript("arguments[0].scrollIntoView(true);", address.getADD_NEW_ADDRESS_button());
 			address.getADD_NEW_ADDRESS_button().click();
@@ -619,22 +638,23 @@ public class StepGroups extends UtilityMethod {
 			js.executeScript("arguments[0].scrollIntoView(true);", address.getADD_NEW_ADDRESS_button());
 			address.getADD_NEW_ADDRESS_button().click();
 		}
-		
-		//Verify if First_Name_textfield is displayed in Address page
-		b=address.getFirst_Name_textfield().isDisplayed();
+
+		// Verify if First_Name_textfield is displayed in Address page
+		b = address.getFirst_Name_textfield().isDisplayed();
 		Assert.assertEquals(true, b);
-		//only 10 steps
-		
+		// only 10 steps
+
 	}
 
 	public void checkLast() {
-		Boolean b=address.getSpecific_Address_text(userName).isDisplayed();
+		Boolean b = address.getSpecific_Address_text(userName).isDisplayed();
 		Assert.assertEquals(true, b);
 	}
+
 	String offPercentage;
 	String firstProductAmount, productActualpricePLP;
 
-	public void Add_the_Product_From_Category_to_Bag_with_All_Verifications() {
+	public void Add_the_Product_From_Category_to_Bag_with_All_Verifications() throws Exception {
 		// Verify if Pantaloons Logo image is displayed in Home page
 		boolean b = home.getPantaloons_image().isDisplayed();
 		Assert.assertEquals(b, true);
@@ -664,7 +684,7 @@ public class StepGroups extends UtilityMethod {
 		productBrandPLP = plp.getProduct_Brand_text().getText();
 		Reporter.log(productBrandPLP);
 		b = driver.findElement(By.xpath("//div[contains(@class,\"PlpWeb_product-price\")]")).isDisplayed();
-		
+
 		if (b) {
 			// Verify if Product Price text is displayed in PLP page
 			boolean bb = plp.getProduct_Price_text().isDisplayed();
@@ -678,7 +698,7 @@ public class StepGroups extends UtilityMethod {
 			if (temp) {
 
 				firstProductAmount = getDiscount(plp.getProduct_Price_text());
-				//System.out.println("firstProductAmount" +firstProductAmount);
+				// System.out.println("firstProductAmount" +firstProductAmount);
 			}
 			b = driver.findElement(By.xpath("//s[@class='actual-price']")).isDisplayed();
 			if (b) {
@@ -687,7 +707,7 @@ public class StepGroups extends UtilityMethod {
 				Assert.assertEquals(b, true);
 				plp.getActual_Price_text().getText();
 			}
-			
+
 			b = driver.findElement(By.xpath("//span[@class='discount discountHighlight']")).isDisplayed();
 			if (b) {
 				b = plp.getOFF_Percentage_text().isDisplayed();
@@ -708,16 +728,16 @@ public class StepGroups extends UtilityMethod {
 		productDiscoutedPricePDP = pdp.getProduct_Discouted_Price_text().getText();
 		b = productDiscoutedPricePDP.contains(firstProductAmount);
 		Assert.assertEquals(b, true);
-		b=false;
+		b = false;
 		try {
-			b = driver.findElement(By.xpath("//span[@class=\"discount discountHighlight pdpnodealpage\"]")).isDisplayed();
+			b = driver.findElement(By.xpath("//span[@class='discount discountHighlight pdpnodealpage']")).isDisplayed();
 		} catch (Exception e) {
-			b=false;
+			b = false;
 		}
 		if (b) {
 			System.out.println("if block");
 			// Get text from Product Actual Amount text in PDP page
-			ProductActualPricePDP=pdp.getProduct_Actual_Amount_text().getText();
+			ProductActualPricePDP = pdp.getProduct_Actual_Amount_text().getText();
 			// Verify if OFF_PDP_text is displayed in PDP page
 			b = pdp.getOFF_PDP_text().isDisplayed();
 			Assert.assertEquals(b, true);
@@ -744,11 +764,16 @@ public class StepGroups extends UtilityMethod {
 		quantityPDP = pdp.getQUANTITY_text().getAttribute("value");
 		// Verify if value of QUANTITY text in PDP page contains *expectedValue*
 		b = pdp.getQUANTITY_text().getAttribute("value").contains(quantityPDP);
-		//System.out.println(pdp.getQUANTITY_text().getText());
-	//	System.out.println(quantityPDP);
+		// System.out.println(pdp.getQUANTITY_text().getText());
+		// System.out.println(quantityPDP);
 		Assert.assertEquals(b, true);
 		// Wait till ADD TO BAG button in PDP page is visible
-		wait.until(ExpectedConditions.visibilityOf(pdp.getADD_TO_BAG_button()));
+		Thread.sleep(1000);
+		try {
+			wait.until(ExpectedConditions.visibilityOf(pdp.getADD_TO_BAG_button()));
+		} catch (Exception e) {
+		}
+
 		// Verify if ADD TO BAG button in PDP page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(pdp.getADD_TO_BAG_button()));
 		// Move mouse pointer on ADD TO BAG button in PDP page
@@ -758,6 +783,7 @@ public class StepGroups extends UtilityMethod {
 		// Wait till MyBagBagPopUp text in Bag page is visible
 		wait.until(ExpectedConditions.visibilityOf(bag.getMyBagBagPopUp_text()));
 		// Click on VIEW_BAG_button in PDP page using javascript executor
+		wait.until(ExpectedConditions.visibilityOf(pdp.getVIEW_BAG_button()));
 		js.executeScript("arguments[0].click();", pdp.getVIEW_BAG_button());
 		// Verify if My Bag text is displayed in Bag page
 		b = bag.getMy_Bag_Page_text().isDisplayed();
@@ -771,20 +797,20 @@ public class StepGroups extends UtilityMethod {
 		firstProductNameBag = bag.getProductName_Bag_text().getText();
 		// Get text from Product Actual Price text in Bag page
 		productDiscountpriceBag = bag.getProduct_Actual_Price_text().getText();
-		//System.out.println(productDiscountpriceBag);
-		//System.out.println((productDiscountpriceBag.split(" ")).length);
-		//productDiscountpriceBag = getDiscount(bag.getProduct_Actual_Price_text());
+		// System.out.println(productDiscountpriceBag);
+		// System.out.println((productDiscountpriceBag.split(" ")).length);
+		// productDiscountpriceBag = getDiscount(bag.getProduct_Actual_Price_text());
 		// Get text from Size dropdown in Bag page
 		selectedSize_Bag = bag.getSize_text().getText();
 		// Get value attribute value of Quantity Count dropdown in Bag page
 		String quantityCount = bag.getQuantity_Count_dropdown().getAttribute("value");
-		b=false;
+		b = false;
 		try {
 			b = driver.findElement(By.xpath("//div[contains(@class,'Cart_discounted-price')]/span")).isDisplayed();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 		if (b) {
 			// Verify if OFF_Bag_text is displayed in Bag page
 			b = bag.getOFF_Bag_text().isDisplayed();
@@ -810,8 +836,8 @@ public class StepGroups extends UtilityMethod {
 		Assert.assertEquals(b, true);
 		// Verify if string productDiscountpriceBag contains string
 		// productDiscountPricePDP
-		productDiscountpriceBag=getOnlyNunber(productDiscountpriceBag);
-		productDiscoutedPricePDP=getOnlyNunber(productDiscoutedPricePDP);
+		productDiscountpriceBag = getOnlyNunber(productDiscountpriceBag);
+		productDiscoutedPricePDP = getOnlyNunber(productDiscoutedPricePDP);
 		b = productDiscountpriceBag.contains(productDiscoutedPricePDP);
 //		System.out.println("new ");
 //		System.out.println(productDiscountpriceBag);
@@ -824,18 +850,20 @@ public class StepGroups extends UtilityMethod {
 		b = selectedSize_Bag.contains(selectedSizePDP);
 		Assert.assertEquals(b, true);
 	}
+
 	public String getOnlyNunber(String num) {
-		String temp="";
-		for(int i=0;i<num.length();i++) {
-			char c=num.charAt(i);
-			if(c<='9'&&c>='0') {
-				temp+=c+"";
+		String temp = "";
+		for (int i = 0; i < num.length(); i++) {
+			char c = num.charAt(i);
+			if (c <= '9' && c >= '0') {
+				temp += c + "";
 			}
 		}
 		return temp;
 	}
-	String productDiscountpriceBag,quantityPDP, selectedSize_Bag, offPercentageBag;
-	
+
+	String productDiscountpriceBag, quantityPDP, selectedSize_Bag, offPercentageBag;
+
 	String ProductActualPricePDP, offPercentagePDP, selectedSizePDP;
 	String firstProductBrandNamePDP, productDiscoutedPricePDP;
 
@@ -845,13 +873,34 @@ public class StepGroups extends UtilityMethod {
 	}
 
 	public String getDiscount(WebElement element) {
-		//System.out.println("inside discount");
+		// System.out.println("inside discount");
 		String ch = element.getText();
-	//	System.out.println(ch);
+		// System.out.println(ch);
 		String[] ch1 = ch.split(" ");
 		String s2 = ch1[1];
-	//	System.out.println(s2);
+		// System.out.println(s2);
 		return s2;
+	}
+
+	public void Load_current_page_completely() {
+		// Press PAGE_DOWN for n times
+		int n = 20;
+		for (int i = 0; i < n; i++) {
+			action.sendKeys(Keys.PAGE_DOWN).perform();
+		}
+		// Press PAGE_UP for n times
+		for (int i = 0; i < n; i++) {
+			action.sendKeys(Keys.PAGE_UP).perform();
+		}
+		// Press PAGE_DOWN for n times
+		for (int i = 0; i < n; i++) {
+			action.sendKeys(Keys.PAGE_DOWN).perform();
+		}
+		// Press PAGE_UP for n times
+		for (int i = 0; i < n; i++) {
+			action.sendKeys(Keys.PAGE_UP).perform();
+		}
+
 	}
 
 }

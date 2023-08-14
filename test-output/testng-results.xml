@@ -1,41 +1,469 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="21" passed="19" failed="2" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[Light Blue Print Top]]>
+      <![CDATA[Pink Solid Shirt]]>
     </line>
     <line>
-      <![CDATA[AND]]>
+      <![CDATA[SF JEANS]]>
+    </line>
+    <line>
+      <![CDATA[0:12:38]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-08-10T16:19:29 IST" name="Default suite" finished-at="2023-08-10T16:20:26 IST" duration-ms="57532">
+  <suite started-at="2023-08-12T14:35:03 IST" name="Suite" finished-at="2023-08-12T14:47:41 IST" duration-ms="757893">
     <groups>
     </groups>
-    <test started-at="2023-08-10T16:19:29 IST" name="Default test" finished-at="2023-08-10T16:20:26 IST" duration-ms="57532">
-      <class name="test_Scripts.My_Bag_Web.MB016">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T16:19:28 IST" name="beforeSuite" finished-at="2023-08-10T16:19:29 IST" duration-ms="277" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T16:19:29 IST" name="browserSetup" finished-at="2023-08-10T16:19:35 IST" duration-ms="6275" status="PASS">
+    <test started-at="2023-08-12T14:35:03 IST" name="Test" finished-at="2023-08-12T14:47:41 IST" duration-ms="757893">
+      <class name="test_Scripts.PLP_Web.PLP075">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.PLP_Web.PLP075@645aa696]" started-at="2023-08-12T14:40:11 IST" name="browserSetup" finished-at="2023-08-12T14:40:14 IST" duration-ms="3089" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="main()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T16:19:35 IST" name="main" finished-at="2023-08-10T16:20:26 IST" duration-ms="51167" status="PASS">
+        <test-method signature="main()[pri:0, instance:test_Scripts.PLP_Web.PLP075@645aa696]" started-at="2023-08-12T14:40:14 IST" name="main" finished-at="2023-08-12T14:40:19 IST" duration-ms="4716" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.PLP_Web.PLP075@645aa696]" started-at="2023-08-12T14:40:19 IST" name="CloseApp" finished-at="2023-08-12T14:40:19 IST" duration-ms="253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.PLP_Web.PLP075 -->
+      <class name="test_Scripts.PLP_Web.PLP020">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.PLP_Web.PLP020@cc43f62]" started-at="2023-08-12T14:39:54 IST" name="browserSetup" finished-at="2023-08-12T14:39:58 IST" duration-ms="3171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.PLP_Web.PLP020@cc43f62]" started-at="2023-08-12T14:39:58 IST" name="main" finished-at="2023-08-12T14:40:03 IST" duration-ms="5451" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.PLP_Web.PLP020@cc43f62]" started-at="2023-08-12T14:40:03 IST" name="CloseApp" finished-at="2023-08-12T14:40:03 IST" duration-ms="276" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.PLP_Web.PLP020 -->
+      <class name="test_Scripts.My_Orders_Web.MO012">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.My_Orders_Web.MO012@1a75e76a]" started-at="2023-08-12T14:45:24 IST" name="browserSetup" finished-at="2023-08-12T14:45:28 IST" duration-ms="4196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:1, instance:test_Scripts.My_Orders_Web.MO012@1a75e76a]" started-at="2023-08-12T14:45:28 IST" name="main" finished-at="2023-08-12T14:45:35 IST" duration-ms="7261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.My_Orders_Web.MO012@1a75e76a]" started-at="2023-08-12T14:45:35 IST" name="CloseApp" finished-at="2023-08-12T14:45:35 IST" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.My_Orders_Web.MO012 -->
+      <class name="test_Scripts.PDP_Web.PDP005">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.PDP_Web.PDP005@273444fe]" started-at="2023-08-12T14:44:28 IST" name="browserSetup" finished-at="2023-08-12T14:44:33 IST" duration-ms="4132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.PDP_Web.PDP005@273444fe]" started-at="2023-08-12T14:44:33 IST" name="main" finished-at="2023-08-12T14:45:00 IST" duration-ms="27806" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.PDP_Web.PDP005@273444fe]" started-at="2023-08-12T14:45:00 IST" name="CloseApp" finished-at="2023-08-12T14:45:00 IST" duration-ms="175" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.PDP_Web.PDP005 -->
+      <class name="test_Scripts.Checkout_web.CO046">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.Checkout_web.CO046@5032714f]" started-at="2023-08-12T14:45:49 IST" name="browserSetup" finished-at="2023-08-12T14:45:53 IST" duration-ms="4123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.Checkout_web.CO046@5032714f]" started-at="2023-08-12T14:45:53 IST" name="main" finished-at="2023-08-12T14:46:35 IST" duration-ms="41416" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='fname']"}
+  (Session info: chrome=115.0.5790.171)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-6F5TJUN', ip: '10.10.31.20', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.171, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f...}, goog:chromeOptions: {debuggerAddress: localhost:9292}, javascriptEnabled: true, pageLoadStrategy: normal, platform: ANY, platformName: ANY, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 97421559d4920b1d630fb3181bc93a15
+*** Element info: {Using=xpath, value=//input[@name='fname']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='fname']"}
+  (Session info: chrome=115.0.5790.171)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-6F5TJUN', ip: '10.10.31.20', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.171, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f...}, goog:chromeOptions: {debuggerAddress: localhost:9292}, javascriptEnabled: true, pageLoadStrategy: normal, platform: ANY, platformName: ANY, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 97421559d4920b1d630fb3181bc93a15
+*** Element info: {Using=xpath, value=//input[@name='fname']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy13.isDisplayed(Unknown Source)
+at generic.StepGroups.Navigate_to_Add_Address_With_Login(StepGroups.java:643)
+at generic.StepGroups.Naviagte_To_Checkout_With_FIlled_Address(StepGroups.java:472)
+at test_Scripts.Checkout_web.CO046.main(CO046.java:73)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.Checkout_web.CO046@5032714f]" started-at="2023-08-12T14:46:35 IST" name="CloseApp" finished-at="2023-08-12T14:46:35 IST" duration-ms="251" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.Checkout_web.CO046 -->
+      <class name="test_Scripts.My_Account_Web.AC0019">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.My_Account_Web.AC0019@353352b6]" started-at="2023-08-12T14:46:55 IST" name="browserSetup" finished-at="2023-08-12T14:46:59 IST" duration-ms="4279" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.My_Account_Web.AC0019@353352b6]" started-at="2023-08-12T14:46:59 IST" name="main" finished-at="2023-08-12T14:47:41 IST" duration-ms="42077" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.My_Account_Web.AC0019@353352b6]" started-at="2023-08-12T14:47:41 IST" name="CloseApp" finished-at="2023-08-12T14:47:41 IST" duration-ms="220" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.My_Account_Web.AC0019 -->
+      <class name="test_Scripts.PLP_Web.PLP007">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.PLP_Web.PLP007@2cb4893b]" started-at="2023-08-12T14:39:46 IST" name="browserSetup" finished-at="2023-08-12T14:39:51 IST" duration-ms="4798" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.PLP_Web.PLP007@2cb4893b]" started-at="2023-08-12T14:39:51 IST" name="main" finished-at="2023-08-12T14:39:54 IST" duration-ms="2997" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.PLP_Web.PLP007@2cb4893b]" started-at="2023-08-12T14:39:54 IST" name="CloseApp" finished-at="2023-08-12T14:39:54 IST" duration-ms="327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.PLP_Web.PLP007 -->
+      <class name="test_Scripts.Payment_web.PA005">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.Payment_web.PA005@48bb62]" started-at="2023-08-12T14:46:35 IST" name="browserSetup" finished-at="2023-08-12T14:46:39 IST" duration-ms="4149" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.Payment_web.PA005@48bb62]" started-at="2023-08-12T14:46:39 IST" name="main" finished-at="2023-08-12T14:46:54 IST" duration-ms="15462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.Payment_web.PA005@48bb62]" started-at="2023-08-12T14:46:54 IST" name="CloseApp" finished-at="2023-08-12T14:46:55 IST" duration-ms="219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.Payment_web.PA005 -->
+      <class name="test_Scripts.PDP_Web.PDP058">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.PDP_Web.PDP058@5e2c3d18]" started-at="2023-08-12T14:37:30 IST" name="browserSetup" finished-at="2023-08-12T14:37:33 IST" duration-ms="2995" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.PDP_Web.PDP058@5e2c3d18]" started-at="2023-08-12T14:37:33 IST" name="main" finished-at="2023-08-12T14:39:46 IST" duration-ms="132395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.PDP_Web.PDP058@5e2c3d18]" started-at="2023-08-12T14:39:46 IST" name="CloseApp" finished-at="2023-08-12T14:39:46 IST" duration-ms="356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.PDP_Web.PDP058 -->
+      <class name="test_Scripts.PDP_Web.PDP034">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.PDP_Web.PDP034@33bc72d1]" started-at="2023-08-12T14:45:00 IST" name="browserSetup" finished-at="2023-08-12T14:45:04 IST" duration-ms="3761" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.PDP_Web.PDP034@33bc72d1]" started-at="2023-08-12T14:45:04 IST" name="main" finished-at="2023-08-12T14:45:23 IST" duration-ms="19194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.PDP_Web.PDP034@33bc72d1]" started-at="2023-08-12T14:45:23 IST" name="CloseApp" finished-at="2023-08-12T14:45:24 IST" duration-ms="154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.PDP_Web.PDP034 -->
+      <class name="test_Scripts.PDP_Web.PDP045">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.PDP_Web.PDP045@7a35b0f5]" started-at="2023-08-12T14:37:21 IST" name="browserSetup" finished-at="2023-08-12T14:37:24 IST" duration-ms="3199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.PDP_Web.PDP045@7a35b0f5]" started-at="2023-08-12T14:37:24 IST" name="main" finished-at="2023-08-12T14:37:30 IST" duration-ms="5962" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.PDP_Web.PDP045@7a35b0f5]" started-at="2023-08-12T14:37:30 IST" name="CloseApp" finished-at="2023-08-12T14:37:30 IST" duration-ms="260" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.PDP_Web.PDP045 -->
+      <class name="test_Scripts.My_Bag_Web.MB011">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.My_Bag_Web.MB011@5524cca1]" started-at="2023-08-12T14:45:35 IST" name="browserSetup" finished-at="2023-08-12T14:45:40 IST" duration-ms="4436" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.My_Bag_Web.MB011@5524cca1]" started-at="2023-08-12T14:45:40 IST" name="main" finished-at="2023-08-12T14:45:49 IST" duration-ms="9173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.My_Bag_Web.MB011@5524cca1]" started-at="2023-08-12T14:45:49 IST" name="CloseApp" finished-at="2023-08-12T14:45:49 IST" duration-ms="182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.My_Bag_Web.MB011 -->
+      <class name="test_Scripts.My_Bag_Web.MB016">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@413d1baf]" started-at="2023-08-12T14:42:16 IST" name="browserSetup" finished-at="2023-08-12T14:42:19 IST" duration-ms="3235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@413d1baf]" started-at="2023-08-12T14:42:19 IST" name="main" finished-at="2023-08-12T14:44:09 IST" duration-ms="109674" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Light Blue Print Top]]>
+              <![CDATA[Pink Solid Shirt]]>
             </line>
             <line>
-              <![CDATA[AND]]>
+              <![CDATA[SF JEANS]]>
             </line>
           </reporter-output>
         </test-method> <!-- main -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@74d1dc36]" started-at="2023-08-10T16:20:26 IST" name="afterSuite" finished-at="2023-08-10T16:20:27 IST" duration-ms="400" status="PASS">
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.My_Bag_Web.MB016@413d1baf]" started-at="2023-08-12T14:44:09 IST" name="CloseApp" finished-at="2023-08-12T14:44:09 IST" duration-ms="392" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterSuite -->
+        </test-method> <!-- CloseApp -->
       </class> <!-- test_Scripts.My_Bag_Web.MB016 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="test_Scripts.SE002">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.SE002@68c9133c]" started-at="2023-08-12T14:37:12 IST" name="browserSetup" finished-at="2023-08-12T14:37:15 IST" duration-ms="3117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:1, instance:test_Scripts.SE002@68c9133c]" started-at="2023-08-12T14:37:15 IST" name="main" finished-at="2023-08-12T14:37:21 IST" duration-ms="5654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.SE002@68c9133c]" started-at="2023-08-12T14:37:21 IST" name="CloseApp" finished-at="2023-08-12T14:37:21 IST" duration-ms="207" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.SE002 -->
+      <class name="test_Scripts.HM002">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.HM002@606e4010]" started-at="2023-08-12T14:35:44 IST" name="browserSetup" finished-at="2023-08-12T14:35:47 IST" duration-ms="3030" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:1, instance:test_Scripts.HM002@606e4010]" started-at="2023-08-12T14:35:47 IST" name="main" finished-at="2023-08-12T14:36:51 IST" duration-ms="63903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.HM002@606e4010]" started-at="2023-08-12T14:36:51 IST" name="CloseApp" finished-at="2023-08-12T14:36:51 IST" duration-ms="313" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.HM002 -->
+      <class name="test_Scripts.HM001">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:test_Scripts.HM001@2d901eb0]" started-at="2023-08-12T14:35:03 IST" name="beforeSuite" finished-at="2023-08-12T14:35:03 IST" duration-ms="215" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.HM001@2d901eb0]" started-at="2023-08-12T14:35:03 IST" name="browserSetup" finished-at="2023-08-12T14:35:09 IST" duration-ms="5174" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="VerifyTheFunctionalityOfCategoriesForNonLoggedInUser()[pri:1, instance:test_Scripts.HM001@2d901eb0]" started-at="2023-08-12T14:35:09 IST" name="VerifyTheFunctionalityOfCategoriesForNonLoggedInUser" finished-at="2023-08-12T14:35:44 IST" duration-ms="35068" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyTheFunctionalityOfCategoriesForNonLoggedInUser -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.HM001@2d901eb0]" started-at="2023-08-12T14:35:44 IST" name="CloseApp" finished-at="2023-08-12T14:35:44 IST" duration-ms="394" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:test_Scripts.HM001@2d901eb0]" started-at="2023-08-12T14:47:41 IST" name="afterSuite" finished-at="2023-08-12T14:47:42 IST" duration-ms="304" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[0:12:38]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- test_Scripts.HM001 -->
+      <class name="test_Scripts.HM055">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.HM055@48075da3]" started-at="2023-08-12T14:37:01 IST" name="browserSetup" finished-at="2023-08-12T14:37:05 IST" duration-ms="4221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:1, instance:test_Scripts.HM055@48075da3]" started-at="2023-08-12T14:37:05 IST" name="main" finished-at="2023-08-12T14:37:12 IST" duration-ms="6704" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.HM055@48075da3]" started-at="2023-08-12T14:37:12 IST" name="CloseApp" finished-at="2023-08-12T14:37:12 IST" duration-ms="236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.HM055 -->
+      <class name="test_Scripts.HM022">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.HM022@8458f04]" started-at="2023-08-12T14:36:51 IST" name="browserSetup" finished-at="2023-08-12T14:36:55 IST" duration-ms="3685" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:1, instance:test_Scripts.HM022@8458f04]" started-at="2023-08-12T14:36:55 IST" name="main" finished-at="2023-08-12T14:37:01 IST" duration-ms="5643" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.HM022@8458f04]" started-at="2023-08-12T14:37:01 IST" name="CloseApp" finished-at="2023-08-12T14:37:01 IST" duration-ms="285" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.HM022 -->
+      <class name="test_Scripts.PLP_Web.PLP050">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.PLP_Web.PLP050@5b218417]" started-at="2023-08-12T14:40:03 IST" name="browserSetup" finished-at="2023-08-12T14:40:07 IST" duration-ms="3387" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.PLP_Web.PLP050@5b218417]" started-at="2023-08-12T14:40:07 IST" name="main" finished-at="2023-08-12T14:40:11 IST" duration-ms="4159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.PLP_Web.PLP050@5b218417]" started-at="2023-08-12T14:40:11 IST" name="CloseApp" finished-at="2023-08-12T14:40:11 IST" duration-ms="306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.PLP_Web.PLP050 -->
+      <class name="test_Scripts.PLP_Web.PLP060">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.PLP_Web.PLP060@16eb3ea3]" started-at="2023-08-12T14:44:09 IST" name="browserSetup" finished-at="2023-08-12T14:44:14 IST" duration-ms="4577" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.PLP_Web.PLP060@16eb3ea3]" started-at="2023-08-12T14:44:14 IST" name="main" finished-at="2023-08-12T14:44:28 IST" duration-ms="13902" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: stale element not found
+  (Session info: chrome=115.0.5790.171)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-6F5TJUN', ip: '10.10.31.20', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.171, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f...}, goog:chromeOptions: {debuggerAddress: localhost:9292}, javascriptEnabled: true, pageLoadStrategy: normal, platform: ANY, platformName: ANY, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0556fcb57a6eac557f77d69de9d4f5d6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=115.0.5790.171)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-6F5TJUN', ip: '10.10.31.20', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.171, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f...}, goog:chromeOptions: {debuggerAddress: localhost:9292}, javascriptEnabled: true, pageLoadStrategy: normal, platform: ANY, platformName: ANY, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0556fcb57a6eac557f77d69de9d4f5d6
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:485)
+at test_Scripts.PLP_Web.PLP060.main(PLP060.java:66)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.PLP_Web.PLP060@16eb3ea3]" started-at="2023-08-12T14:44:28 IST" name="CloseApp" finished-at="2023-08-12T14:44:28 IST" duration-ms="507" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.PLP_Web.PLP060 -->
+      <class name="test_Scripts.PLP_Web.PLP091">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.PLP_Web.PLP091@6caf0677]" started-at="2023-08-12T14:40:19 IST" name="browserSetup" finished-at="2023-08-12T14:40:23 IST" duration-ms="3501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="main()[pri:0, instance:test_Scripts.PLP_Web.PLP091@6caf0677]" started-at="2023-08-12T14:40:23 IST" name="main" finished-at="2023-08-12T14:42:16 IST" duration-ms="113052" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.PLP_Web.PLP091@6caf0677]" started-at="2023-08-12T14:42:16 IST" name="CloseApp" finished-at="2023-08-12T14:42:16 IST" duration-ms="371" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseApp -->
+      </class> <!-- test_Scripts.PLP_Web.PLP091 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

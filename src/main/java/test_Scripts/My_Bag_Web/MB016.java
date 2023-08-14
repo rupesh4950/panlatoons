@@ -37,6 +37,7 @@ public class MB016 extends Base_Test {
 
 	@Test
 	public void main() throws Exception {
+		className="MB016";
 		home = new Home(driver);
 		header = new Header(driver);
 		plp = new PLP(driver);
@@ -55,6 +56,7 @@ public class MB016 extends Base_Test {
 		Assert.assertEquals(b, true);
 		// image verifuued
 		sg.Add_the_Product_From_Category_to_Bag_with_All_Verifications();
+		bool=true;
 	}
 
 	

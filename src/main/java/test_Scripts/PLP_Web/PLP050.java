@@ -17,6 +17,7 @@ import pom_scripts.web.Header.Plp.PDP;
 public class PLP050 extends Base_Test {
 	@Test
 	public void main() throws Exception {
+		className="PLP050";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -41,6 +42,7 @@ public class PLP050 extends Base_Test {
 		// Click on Sub Catgeory link in Header page
 		header.getSub_Catgeory_Link(subCategory).click();
 		// Verify if First Product image is displayed
+		wait.until(ExpectedConditions.visibilityOf(plp.getFirst_Product_Image()));
 		b = plp.getFirst_Product_Image().isDisplayed();
 		Assert.assertEquals(b, true);
 		// end
@@ -62,6 +64,7 @@ public class PLP050 extends Base_Test {
 		plp.getSelect_Sort_By_text(highToLow).click();
 		// Verify if Select Sort By text is displayed in PLP page
 		Assert.assertEquals(b, true);
+		bool=true;
 
 	}
 }

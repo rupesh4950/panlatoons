@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Properties;
 import java.util.Set;
 import java.util.logging.FileHandler;
@@ -31,6 +32,10 @@ public class UtilityMethod implements FrameworkConstants{
 	public static String browserName;
 	public static  JavascriptExecutor js;
 	public static Actions action;
+	public static String className="";
+	public static boolean bool;
+	public static long shs,she,sms,sme,sss,sse,ihs,ihe,ims,ime,iss,ise;
+	public static ArrayList<String >arr=new ArrayList<String>();
 
 
     public void initObjects() {

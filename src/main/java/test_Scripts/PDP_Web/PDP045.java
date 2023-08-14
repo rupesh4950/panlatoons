@@ -19,6 +19,7 @@ public class PDP045
 		extends Base_Test {
 	@Test
 	public void main() throws Exception {
+		className="PDP045";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -50,5 +51,6 @@ public class PDP045
 		//Verify if Selected Size button in PDP page is selected
 		b=pdp.getSelected_Size_button().getAttribute("class").contains("selected");
 		Assert.assertEquals(b, true);
+		bool=true;
 	}
 }

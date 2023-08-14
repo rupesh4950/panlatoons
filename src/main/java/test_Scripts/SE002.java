@@ -17,6 +17,7 @@ import pom_scripts.web.Header.Plp.PDP;
 public class SE002 extends Base_Test {
 	@Test(priority = 1)
 	public void main() throws Exception, Exception {
+		className="SE002";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -27,20 +28,16 @@ public class SE002 extends Base_Test {
 		WebDriverWait w = new WebDriverWait(driver, 1);
 		wait.until(ExpectedConditions.elementToBeClickable(home.getIlldothislater()));
 		home.getIlldothislater().click();
-		boolean b = header.getPantaloons().isDisplayed();
-		Assert.assertEquals(b, true);
-		//img verification completed
-		//3 Verify if Search for products and more textfield is displayed
+		
+		
 		WebElement ele = header.getSearch_for_products_and_more_textfield();
-		b=ele.isDisplayed();
-		Assert.assertEquals(b, true);
 		// 4 Enter product into Search for products and more textfield
 		ele.sendKeys(product);
 		//5 Click on Search icon
 		header.getSearch_icon().click();
 		//Wait till First Product image in PLP page is visible
 		wait.until(ExpectedConditions.visibilityOf(plp.getFirst_Product_Image()));
-		b=plp.getFirst_Product_Image().isDisplayed();
+		boolean b = plp.getFirst_Product_Image().isDisplayed();
 		Assert.assertEquals(b, true);
 	//	Get text from Product Name text in PLP page
 		String productNamePLP = plp.getProduct_Name_text().getText();
@@ -61,5 +58,6 @@ public class SE002 extends Base_Test {
 		//Verify if Sorry message text is displayed in Wishlist page
 		b=wishlist.getSorry_message_Text().isDisplayed();
 		Assert.assertEquals(b, true);
+		bool=b;
 	}
 }

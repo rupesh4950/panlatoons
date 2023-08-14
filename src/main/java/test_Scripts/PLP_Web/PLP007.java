@@ -19,6 +19,7 @@ import pom_scripts.web.Header.Plp.PDP;
 public class PLP007 extends Base_Test{
 	@Test
 	public void main() throws Exception {
+		className="PLP007";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -56,5 +57,7 @@ public class PLP007 extends Base_Test{
 		//Verify if First Product image is displayed in PLP page
 		b=plp.getFirst_Product_Image().isDisplayed();
 		Assert.assertEquals(b, true);
+		
+		bool=true;
 	}
 }

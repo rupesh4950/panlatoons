@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import generic.Base_Test;
+import generic.StepGroups;
 import pom_scripts.web.Home;
 import pom_scripts.web.Header.Header;
 import pom_scripts.web.Header.PLP;
@@ -17,21 +18,19 @@ import pom_scripts.web.Header.Plp.PDP;
 public class HM022 extends Base_Test {
 	@Test(priority = 1)
 	public void main() {
+		className="HM022";
+		boolean b=false;
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
 		js = (JavascriptExecutor) driver;
 		PDP pdp=new PDP(driver);
+		StepGroups sg=new StepGroups(driver);
 		WebDriverWait w=new WebDriverWait(driver, 1);
 		wait.until(ExpectedConditions.elementToBeClickable(home.getIlldothislater()));
 		home.getIlldothislater().click();
-
-		boolean b = header.getPantaloons().isDisplayed();
-		Assert.assertEquals(b, true);
-		//base for all
-		for( int i=0;i<5;i++) {
-			action.sendKeys(Keys.PAGE_DOWN).perform();
-		}
+		//Load current page completely
+		sg.Load_current_page_completely();
 		//Scroll page vertically until visibility of Trending Now text in Home page
 		action.moveToElement(home.getTrending_Now_text()).perform();;
 		//6 Verify if Trending Now text is displayed in Home page
@@ -48,5 +47,6 @@ public class HM022 extends Base_Test {
 		//11 Verify if PDP ProductName text is displayed in PDP page
 		b=pdp.getPDP_ProductName_Text().isDisplayed();
 		Assert.assertEquals(b, true);
+		bool=b;
 	}
 }

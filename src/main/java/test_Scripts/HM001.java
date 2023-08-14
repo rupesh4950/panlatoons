@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.springframework.beans.factory.wiring.ClassNameBeanWiringInfoResolver;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -17,26 +18,37 @@ import pom_scripts.web.Header.Login;
 public class HM001 extends Base_Test {
 	@Test(priority = 1)
 	public void VerifyTheFunctionalityOfCategoriesForNonLoggedInUser() throws Exception {
+		className="HM001";
 		Home home=new Home(driver);
 		Header header = new Header(driver);
+		//Wait till I’ll do this later button in Home page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(home.getIlldothislater()));
+		//Click on I’ll do this later button in Home page
 		home.getIlldothislater().click();
-		
+		//Verify if Pantaloons image is displayed in Header page
 		boolean b = header.getPantaloons().isDisplayed();
 		Assert.assertEquals(b, true);
+		//Verify if My Account icon is displayed in Home page
 		b=home.getMy_Account().isDisplayed();
 		Assert.assertEquals(b, true);
+		//Click on My Account icon in Home page
 		home.getMy_Account().click();
 		Login login=new Login(driver);
+		//Verify if Login/Register text is displayed in Login page
 		b=login.getLoginRegister().isDisplayed();
 		Assert.assertEquals(b, true);
+		//Click on Pantaloons Logo image in Home page using javascript executor
 		home.getPantaloons_Logo().click();
 		//women clicked
+		//Verify if category link is displayed in Home page
 		b=home.getcategory("WOMEN").isDisplayed();
 		Assert.assertEquals(b, true);	
+		//Move mouse pointer on category link in Home page
 		action.moveToElement(home.getcategory("WOMEN")).build().perform();
+		//Verify if Women Category link is displayed in Header page
 		b=header.getWomen_Category("WESTERN WEAR").isDisplayed();
 		Assert.assertEquals(b, true);
+		//Verify if category link is displayed in Home page
 		action.moveToElement(header.getWomen_Category("WESTERN WEAR")).build().perform();
 		//10
 		//men move
@@ -81,6 +93,7 @@ public class HM001 extends Base_Test {
 		ele.click();
 		b=home.getBrands_in_Focus().isDisplayed();
 		Assert.assertEquals(b, true);
+		bool=true;
 		
 	}
 	

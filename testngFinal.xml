@@ -28,6 +28,7 @@
 			<class name="test_Scripts.Checkout_web.CO046"></class>
 			<class name="test_Scripts.Payment_web.PA005"></class>
 			<class name="test_Scripts.My_Account_Web.AC0019"></class>
+			<!-- total 21-->
 		</classes>
 	</test> <!--
 	Test -->

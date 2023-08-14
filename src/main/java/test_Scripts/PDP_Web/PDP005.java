@@ -17,6 +17,7 @@ import pom_scripts.web.Header.Plp.PDP;
 public class PDP005 extends Base_Test1 {
 	@Test
 	public void main() throws Exception {
+		className="PDP005";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -61,5 +62,6 @@ public class PDP005 extends Base_Test1 {
 		sg.Get_Product_Details_In_PLP_Copy();
 		sg.Get_Product_Details_In_PDP();
 		sg.Verify_PLP_and_PDP_Products_are_same();
+		bool=true;
 	}
 }

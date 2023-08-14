@@ -22,6 +22,7 @@ import pom_scripts.web.Header.Plp.PDP;
 public class PLP075 extends Base_Test {
 	@Test
 	public void main() throws Exception {
+		className="PLP075";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -76,6 +77,7 @@ public class PLP075 extends Base_Test {
 		// count list of web elements
 		List<WebElement> l = driver.findElements(By.xpath("//div[contains(@class,'QuickView__thumbnail-image')]"));
 		System.out.println(l.size());
+		bool=true;
 	}
 
 }

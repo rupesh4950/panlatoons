@@ -21,6 +21,7 @@ import pom_scripts.web.Header.Plp.Quick_View;
 public class WS016 extends Base_Test {
 	@Test(priority = 1)
 	public void main() throws Exception, Exception {
+		className="WS016";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -62,6 +63,7 @@ public class WS016 extends Base_Test {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h3[text()='My Wishlist']")));
 		//Get text from Product Name text in Wishlist page
 		String productNameWishlist = wishlist.getProduct_Name_text().getText();
+		bool=true;
 		}
 
 }

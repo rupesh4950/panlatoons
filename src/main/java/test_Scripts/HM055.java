@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import generic.Base_Test;
 import generic.ReadExcel;
+import generic.StepGroups;
 import pom_scripts.web.Home;
 import pom_scripts.web.Header.Header;
 import pom_scripts.web.Header.PLP;
@@ -20,6 +21,7 @@ import pom_scripts.web.Header.Plp.PDP;
 public class HM055 extends Base_Test {
 	@Test(priority = 1)
 	public void main() throws Exception, Exception {
+		className="HM055";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -44,21 +46,16 @@ public class HM055 extends Base_Test {
 		}
 
 	}
-
 	private void startIteration(String val) {
 		Home home = new Home(driver);
 		PLP plp = new PLP(driver);
+		StepGroups sg=new StepGroups(driver);
 		Header header = new Header(driver);
+		sg.Navigate_to_PLP_Page("MEN",val);
 		WebElement ele = home.getcategory("MEN");
 		action.moveToElement(ele).perform();
-		// Wait till Sub Catgeory link in Header page is visible
-		ele = header.getSub_Catgeory_Link(val);
-		ele.click();
-		// Verify if First Product image is displayed in PLP page
-		boolean b = plp.getFirst_Product_Image().isDisplayed();
-		Assert.assertEquals(b, true);
 		// 5 Verify if HEADING TITLE PLP text is displayed in PLP page
-		b = plp.getHEADING_TITLE_PLP_Text().isDisplayed();
+		boolean b = plp.getHEADING_TITLE_PLP_Text().isDisplayed();
 		Assert.assertEquals(b, true);
 		// Get text from BreadcrumbTwo text in PLP page
 		String breadcrumbSubCatagory = plp.getBreadcrumbTwo_Text().getText();
@@ -67,6 +64,7 @@ public class HM055 extends Base_Test {
 		// Verify if string breadcrumbSubCatagory contains string Men Category:TOP WEAR
 		b = (val.equalsIgnoreCase(breadcrumbSubCatagory));
 		Assert.assertEquals(b, true);
+		bool=true;
 
 	}
 

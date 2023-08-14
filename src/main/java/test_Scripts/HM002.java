@@ -19,6 +19,7 @@ import pom_scripts.web.Header.PLP;
 public class HM002 extends Base_Test {
 	@Test(priority = 1)
 	public void main() {
+		className="HM002";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -97,6 +98,7 @@ public class HM002 extends Base_Test {
 			b = driver.findElement(By.xpath("//div[@class='SubBanner_sub-banner-double__KzWC8']")).isDisplayed();
 			Assert.assertEquals(b, true);
 		}
+		bool=true;
 		
 		/////
 		// 22Navigate to previous page in browser window

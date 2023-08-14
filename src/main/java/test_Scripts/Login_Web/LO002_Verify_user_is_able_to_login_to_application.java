@@ -17,6 +17,7 @@ import pom_scripts.web.Header.Plp.PDP;
 public class LO002_Verify_user_is_able_to_login_to_application extends Base_Test {
 	@Test
 	public void main() throws Exception {
+		className="LO002";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -32,6 +33,7 @@ public class LO002_Verify_user_is_able_to_login_to_application extends Base_Test
 		// image verifcation completed
 		String mobileNUmber = "";
 		sg.Login_to_Pantaloons(mobileNUmber);
+		bool=true;
 		
 	}
 }

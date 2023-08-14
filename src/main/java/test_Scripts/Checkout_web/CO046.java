@@ -29,6 +29,7 @@ public class CO046 extends Base_Test1 {
 
 	@Test
 	public void main() throws Exception {
+		className="CO046";
 		Address address=new Address(driver);
 		Home home = new Home(driver);
 		Header header = new Header(driver);
@@ -94,6 +95,7 @@ public class CO046 extends Base_Test1 {
 		wait.until(ExpectedConditions.visibilityOf(address.getOffice_Address_Type_text()));
 		//Verify if Specific_Address_text is displayed in Address page
 		sg.checkLast();
+		bool=true;
 		
 	}
 

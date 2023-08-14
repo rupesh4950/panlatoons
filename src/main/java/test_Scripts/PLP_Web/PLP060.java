@@ -19,6 +19,7 @@ import pom_scripts.web.Header.Plp.PDP;
 public class PLP060 extends Base_Test1 {
 	@Test
 	public void main() throws Exception {
+		className="PLP060";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
@@ -47,7 +48,7 @@ public class PLP060 extends Base_Test1 {
 		// Move mouse pointer on Pantaloons Logo image in Home page
 		action.moveToElement(home.getPantaloons_Logo()).perform();
 		// Press PAGE_DOWN key
-		action.sendKeys(Keys.PAGE_DOWN).perform();
+		action.sendKeys(Keys.ARROW_DOWN).perform();
 		// Verify if First Product image is displayed in PLP page
 		b = plp.getFirst_Product_Image().isDisplayed();
 		Assert.assertEquals(b, true);
@@ -55,6 +56,9 @@ public class PLP060 extends Base_Test1 {
 		//Get Product Details In PLP - Copy
 		sg.Get_Product_Details_In_PLP_Copy();
 		//Click on Wishlist icon in PLP page
+		wait.until(ExpectedConditions.visibilityOf(plp.getWishlist_icon()));
+		wait.until(ExpectedConditions.elementToBeClickable(plp.getWishlist_icon()));
+		action.moveToElement(plp.getWishlist_icon()).perform();
 		plp.getWishlist_icon().click();
 		//Wait till Added to your wishlist text in PLP page is visible
 		wait.until(ExpectedConditions.visibilityOf(plp.getAdded_to_your_wishlist_text()));
@@ -66,6 +70,7 @@ public class PLP060 extends Base_Test1 {
 		//Get Product Details in Wishlist
 		sg.Get_Product_Details_in_Wishlist();
 		sg.Verify_PLP_and_Wishlist_Product_are_same();
+		bool=true;
 		
 
 	}

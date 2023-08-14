@@ -22,9 +22,11 @@ public class PLP091 extends Base_Test {
 
 	@Test
 	public void main() throws Exception {
+		className="PLP091";
 		Home home = new Home(driver);
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
+		bool=false;
 		js = (JavascriptExecutor) driver;
 		PDP pdp = new PDP(driver);
 		StepGroups sg = new StepGroups(driver);
@@ -78,5 +80,6 @@ public class PLP091 extends Base_Test {
 		Assert.assertEquals(b, true);
 		sg.Get_Product_Details_From_Bag_Page();
 		sg.Verify_Quick_View_and_Bag_Products_are_same();
+		bool=true;
 	}
 }
