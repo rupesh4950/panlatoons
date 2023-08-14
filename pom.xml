@@ -58,7 +58,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugins>
+			
     <plugin>
         <groupId>org.apache.maven.plugin</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -78,7 +78,7 @@
          </configuration>        </plugin> 
 
 </plugins> 
-		</plugins>
+		
 	</build>
 	<dependencies>
 		<dependency>
