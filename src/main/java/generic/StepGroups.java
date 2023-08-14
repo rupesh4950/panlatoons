@@ -92,7 +92,7 @@ public class StepGroups extends UtilityMethod {
 		//comp
 		wait.until(ExpectedConditions.visibilityOf(plp.getFirst_Product_Image()));
 		boolean b = plp.getFirst_Product_Image().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 	}
 
 	public void Navigate_to_PDP_Page() throws Exception {
@@ -103,18 +103,18 @@ public class StepGroups extends UtilityMethod {
 
 	public void Get_Product_Details_In_PLP_Copy() {
 		boolean b = plp.getProduct_Brand_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product Brand text in PLP page
 		productBrandPLP = plp.getProduct_Brand_text().getText();
 		// System.out.println(productBrandPLP);
 		// Verify if Product Name text is displayed in PLP page
 		b = plp.getProduct_Name_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product Name text in PLP page
 		productNamePLP = plp.getProduct_Name_text().getText();
 		// Verify if Product Price text is displayed in PLP page
 		b = plp.getProduct_Price_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		productPricePLP = plp.getProduct_Price_text().getText();
 		productPricePLP = productPricePLP.replaceAll("\\s", "");
 	}
@@ -125,16 +125,16 @@ public class StepGroups extends UtilityMethod {
 		WEB_VerifyUserIsAbleToSelectProductOfAvailableSize(val1, val2, 5);
 		wait.until(ExpectedConditions.visibilityOf(pdp.getProduct_Name_text()));
 		boolean b = pdp.getProduct_Brand_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		ProductBrandPDP = pdp.getProduct_Brand_text().getText();
 		// System.out.println(ProductBrandPDP);
 		// Verify if Product Name text is displayed in PDP page
 		b = pdp.getProduct_Name_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		productNamePDP = pdp.getProduct_Name_text().getText();
 		// Verify if Product Price text is displayed in PDP page
 		b = pdp.getProduct_Price_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product Price text in PDP page
 		ProductPricePDP = pdp.getProduct_Price_text().getText();
 		ProductPricePDP = ProductPricePDP.replaceAll("\\s", "");
@@ -181,12 +181,12 @@ public class StepGroups extends UtilityMethod {
 		boolean b = productBrandPLP.equals(ProductBrandPDP);
 		// System.out.println(b);
 		// System.out.println(productBrandPLP+" falues is "+ProductBrandPDP);
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 
 		b = ProductPricePDP.contains(productPricePLP);
 		System.out.println(ProductPricePDP);
 		System.out.println(productPricePLP);
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 
 	}
 
@@ -212,7 +212,7 @@ public class StepGroups extends UtilityMethod {
 		home.getMy_Account_icon().click();
 		// Verify if Mobile Number textfield is displayed in Login page
 		boolean b = login.getMobile_Number_textfield().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Enter Mobile Number into Mobile Number textfield in Login page
 		login.getMobile_Number_textfield().sendKeys(Mobile_Number);
 		String validOtp = Get_OTP_from_Notification_Bar();
@@ -227,7 +227,7 @@ public class StepGroups extends UtilityMethod {
 		action.moveToElement(home.getMy_Account_icon()).perform();
 		// Verify if LOGOUT button is displayed in My Account page
 		b = myAccount.getLOGOUT_button().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 	}
 
 	public void Remove_Multiple_Products_From_Wishlist() throws Exception {
@@ -261,11 +261,11 @@ public class StepGroups extends UtilityMethod {
 		boolean b = productBrandPLP.equals(productBrandWishlist);
 		// System.out.println(b);
 		// System.out.println(productBrandPLP+" falues is "+ProductBrandPDP);
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		productPriceWishlist = productPriceWishlist.replaceAll("\\s", "");
 		b = productPricePLP.contains(productPriceWishlist);
 
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 	}
 
 	String productBrandWishlist, productNameWishlists, productPriceWishlist;
@@ -273,17 +273,17 @@ public class StepGroups extends UtilityMethod {
 	public void Get_Product_Details_in_Wishlist() {
 		// Verify if Product Brand text is displayed in Wishlist page
 		boolean b = wishlist.getProduct_Brand_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product Brand text in Wishlist page
 		productBrandWishlist = wishlist.getProduct_Brand_text().getText();
 		// Verify if Product Name text is displayed in Wishlist page
 		b = wishlist.getProduct_Name_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product Name text in Wishlist page
 		productNameWishlists = wishlist.getProduct_Name_text().getText();
 		// Verify if Product Price text is displayed in Wishlist page
 		b = wishlist.getProduct_Price_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		productPriceWishlist = wishlist.getProduct_Price_text().getText();
 		productPriceWishlist = productPriceWishlist.replaceAll("\\s", "");
 	}
@@ -363,12 +363,12 @@ public class StepGroups extends UtilityMethod {
 	public void Get_Product_Details_in_Quick_View() {
 		// Verify if Product Name text is displayed in Quick View page
 		boolean b = quickView.getProduct_Name_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product Name text in Quick View page
 		productNameQuickView = quickView.getProduct_Name_text().getText();
 		// Verify if Product Brand text is displayed in Quick View page
 		b = quickView.getProduct_Brand_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		productBrandQuickView = quickView.getProduct_Brand_text().getText();
 		// Verify if Product Price text is displayed in Quick View page
 		b = quickView.getProduct_Price_text().isDisplayed();
@@ -454,7 +454,7 @@ public class StepGroups extends UtilityMethod {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='GO TO BAG']")));
 		// Verify if GO TO BAG button is displayed in Quick View page
 		boolean b = quickView.getGO_TO_BAG_button().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Press PAGE_UP for n times
 		n = 2;
 		for (int i = 0; i < n; i++) {
@@ -657,7 +657,7 @@ public class StepGroups extends UtilityMethod {
 	public void Add_the_Product_From_Category_to_Bag_with_All_Verifications() throws Exception {
 		// Verify if Pantaloons Logo image is displayed in Home page
 		boolean b = home.getPantaloons_image().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		String category = "WOMEN", subCategoryWeb = "Tees & Tops";
 		Navigate_to_PLP_Page(category, subCategoryWeb);
 		// Click on SORT BY dropdown in PLP page
@@ -674,13 +674,13 @@ public class StepGroups extends UtilityMethod {
 		wait.until(ExpectedConditions.elementToBeClickable(plp.getFirst_Product_Image()));
 		// Verify if Product Name text is displayed in PLP page
 		b = plp.getProduct_Name_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product Name text in PLP page
 		String productNamePLP = plp.getProduct_Name_text().getText();
 		Reporter.log(productNamePLP);
 		// Verify if Product Brand text is displayed in PLP page
 		b = plp.getProduct_Brand_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		productBrandPLP = plp.getProduct_Brand_text().getText();
 		Reporter.log(productBrandPLP);
 		b = driver.findElement(By.xpath("//div[contains(@class,\"PlpWeb_product-price\")]")).isDisplayed();
@@ -704,14 +704,14 @@ public class StepGroups extends UtilityMethod {
 			if (b) {
 				// Verify if Actual_Price_text is displayed in PLP page
 				b = plp.getActual_Price_text().isDisplayed();
-				Assert.assertEquals(b, true);
+				Assert.assertEquals(b, Boolean.TRUE);
 				plp.getActual_Price_text().getText();
 			}
 
 			b = driver.findElement(By.xpath("//span[@class='discount discountHighlight']")).isDisplayed();
 			if (b) {
 				b = plp.getOFF_Percentage_text().isDisplayed();
-				Assert.assertEquals(b, true);
+				Assert.assertEquals(b, Boolean.TRUE);
 				offPercentage = plp.getOFF_Percentage_text().getText();
 			}
 		}
@@ -723,11 +723,11 @@ public class StepGroups extends UtilityMethod {
 		// Get text from Product Name text in PDP page
 		productNamePDP = pdp.getProduct_Name_text().getText();
 		b = productBrandPLP.contains(firstProductBrandNamePDP);
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product_Discouted_Price_text in PDP page
 		productDiscoutedPricePDP = pdp.getProduct_Discouted_Price_text().getText();
 		b = productDiscoutedPricePDP.contains(firstProductAmount);
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		b = false;
 		try {
 			b = driver.findElement(By.xpath("//span[@class='discount discountHighlight pdpnodealpage']")).isDisplayed();
@@ -740,19 +740,19 @@ public class StepGroups extends UtilityMethod {
 			ProductActualPricePDP = pdp.getProduct_Actual_Amount_text().getText();
 			// Verify if OFF_PDP_text is displayed in PDP page
 			b = pdp.getOFF_PDP_text().isDisplayed();
-			Assert.assertEquals(b, true);
+			Assert.assertEquals(b, Boolean.TRUE);
 			// Get text from OFF_PDP text in PDP page
 			offPercentagePDP = pdp.getOFF_PDP_text().getText();
 //			System.out.println(productActualpricePLP+"   null");
 //			System.out.println(ProductActualPricePDP+"   null");
 			b = productActualpricePLP.contains(ProductActualPricePDP);
-			Assert.assertEquals(b, true);
+			Assert.assertEquals(b, Boolean.TRUE);
 			b = offPercentage.contains(offPercentagePDP);
-			Assert.assertEquals(b, true);
+			Assert.assertEquals(b, Boolean.TRUE);
 		}
 		// Verify if SELECT_SIZE_text is displayed in PDP page
 		b = pdp.getSELECT_SIZE_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Verify if Select Size button in PDP page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(pdp.getSelect_Size_button()));
 		// Get text from SELECT_AVAILABLE_SIZE_button in PDP page
@@ -766,7 +766,7 @@ public class StepGroups extends UtilityMethod {
 		b = pdp.getQUANTITY_text().getAttribute("value").contains(quantityPDP);
 		// System.out.println(pdp.getQUANTITY_text().getText());
 		// System.out.println(quantityPDP);
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Wait till ADD TO BAG button in PDP page is visible
 		Thread.sleep(1000);
 		try {
@@ -787,10 +787,10 @@ public class StepGroups extends UtilityMethod {
 		js.executeScript("arguments[0].click();", pdp.getVIEW_BAG_button());
 		// Verify if My Bag text is displayed in Bag page
 		b = bag.getMy_Bag_Page_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Verify if ProductBrandName_Bag text is displayed in Home page
 		b = home.getProductBrandName_Bag_text().isDisplayed();
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from ProductBrandName_Bag text in Home page
 		firstProductBrandNameBag = home.getProductBrandName_Bag_text().getText();
 		// Get text from ProductName_Bag text in Bag page
@@ -814,26 +814,26 @@ public class StepGroups extends UtilityMethod {
 		if (b) {
 			// Verify if OFF_Bag_text is displayed in Bag page
 			b = bag.getOFF_Bag_text().isDisplayed();
-			Assert.assertEquals(b, true);
+			Assert.assertEquals(b, Boolean.TRUE);
 			// Get text from OFF_Bag text in Bag page
 			offPercentageBag = bag.getOFF_Bag_text().getText();
 			// Get text from Product_Striked_Price_text in Bag page
 			productActualPriceBag = bag.getProduct_Striked_Price_text().getText();
 			// Verify if text of OFF_Bag text in Bag page contains *expectedText*
 			b = productActualPriceBag.contains(offPercentage);
-			Assert.assertEquals(b, true);
+			Assert.assertEquals(b, Boolean.TRUE);
 			ProductActualPricePDP = WEB_RemoveSpaceFromWords(ProductActualPricePDP);
 			// Verify if string ProductActualPricePDP contains string productActualPriceBag
 			b = ProductActualPricePDP.contains(productActualPriceBag);
-			Assert.assertEquals(b, true);
+			Assert.assertEquals(b, Boolean.TRUE);
 		}
 		// Verify if string firstProductBrandNamePDP contains string
 		// firstProductBrandNameBag
 		b = firstProductBrandNamePDP.contains(firstProductBrandNameBag);
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Verify if string productNamePDP contains string firstProductNameBag
 		b = productNamePDP.contains(firstProductNameBag);
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Verify if string productDiscountpriceBag contains string
 		// productDiscountPricePDP
 		productDiscountpriceBag = getOnlyNunber(productDiscountpriceBag);
@@ -842,13 +842,13 @@ public class StepGroups extends UtilityMethod {
 //		System.out.println("new ");
 //		System.out.println(productDiscountpriceBag);
 //		System.out.println(productDiscoutedPricePDP);
-		Assert.assertEquals(b, true);
+Assert.assertEquals(b, Boolean.TRUE);
 		// Verify if string quantityCount matches string quantityPDP
 		b = quantityCount.contains(quantityPDP);
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 		// Verify if string selectedSize_Bag contains string selectedSizePDP
 		b = selectedSize_Bag.contains(selectedSizePDP);
-		Assert.assertEquals(b, true);
+		Assert.assertEquals(b, Boolean.TRUE);
 	}
 
 	public String getOnlyNunber(String num) {
