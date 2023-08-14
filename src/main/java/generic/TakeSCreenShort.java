@@ -22,7 +22,7 @@ public class TakeSCreenShort extends UtilityMethod{
 				arr.add(className);
 			}
 		} catch (Exception e) {
-			
+			//sysout
 		}}
 
 
