@@ -382,10 +382,10 @@ public class StepGroups extends UtilityMethod {
 	public void Get_Product_Details_From_Bag_Page() {
 		// Verify if My Bag text is displayed in Bag page
 		Boolean b = bag.getMy_Bag_Page_text().isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if ProductBrandName_Bag text is displayed in Home page
 		b = home.getProductBrandName_Bag_text().isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Get text from ProductBrandName_Bag text in Home page
 		firstProductBrandNameBag = home.getProductBrandName_Bag_text().getText();
 		// Get text from ProductName_Bag text in Bag page
