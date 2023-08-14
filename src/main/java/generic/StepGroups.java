@@ -91,7 +91,7 @@ public class StepGroups extends UtilityMethod {
 		//wait.until(ExpectedConditions.P)
 		//comp
 		wait.until(ExpectedConditions.visibilityOf(plp.getFirst_Product_Image()));
-		boolean b = plp.getFirst_Product_Image().isDisplayed();
+		Boolean b = plp.getFirst_Product_Image().isDisplayed();
 		Assert.assertEquals(b, Boolean.TRUE);
 	}
 
@@ -102,7 +102,7 @@ public class StepGroups extends UtilityMethod {
 	}
 
 	public void Get_Product_Details_In_PLP_Copy() {
-		boolean b = plp.getProduct_Brand_text().isDisplayed();
+		Boolean b = plp.getProduct_Brand_text().isDisplayed();
 		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product Brand text in PLP page
 		productBrandPLP = plp.getProduct_Brand_text().getText();
@@ -124,7 +124,7 @@ public class StepGroups extends UtilityMethod {
 				val2 = "(//div[@class='size size-web ']//span)[1]";
 		WEB_VerifyUserIsAbleToSelectProductOfAvailableSize(val1, val2, 5);
 		wait.until(ExpectedConditions.visibilityOf(pdp.getProduct_Name_text()));
-		boolean b = pdp.getProduct_Brand_text().isDisplayed();
+		Boolean b = pdp.getProduct_Brand_text().isDisplayed();
 		Assert.assertEquals(b, Boolean.TRUE);
 		ProductBrandPDP = pdp.getProduct_Brand_text().getText();
 		// System.out.println(ProductBrandPDP);
@@ -178,7 +178,7 @@ public class StepGroups extends UtilityMethod {
 	}
 
 	public void Verify_PLP_and_PDP_Products_are_same() {
-		boolean b = productBrandPLP.equals(ProductBrandPDP);
+		Boolean b = productBrandPLP.equals(ProductBrandPDP);
 		// System.out.println(b);
 		// System.out.println(productBrandPLP+" falues is "+ProductBrandPDP);
 		Assert.assertEquals(b, Boolean.TRUE);
@@ -211,7 +211,7 @@ public class StepGroups extends UtilityMethod {
 	public void Login_to_Pantaloons(String Mobile_Number) throws Exception {
 		home.getMy_Account_icon().click();
 		// Verify if Mobile Number textfield is displayed in Login page
-		boolean b = login.getMobile_Number_textfield().isDisplayed();
+		Boolean b = login.getMobile_Number_textfield().isDisplayed();
 		Assert.assertEquals(b, Boolean.TRUE);
 		// Enter Mobile Number into Mobile Number textfield in Login page
 		login.getMobile_Number_textfield().sendKeys(Mobile_Number);
@@ -258,7 +258,7 @@ public class StepGroups extends UtilityMethod {
 	}
 
 	public void Verify_PLP_and_Wishlist_Product_are_same() {
-		boolean b = productBrandPLP.equals(productBrandWishlist);
+		Boolean b = productBrandPLP.equals(productBrandWishlist);
 		// System.out.println(b);
 		// System.out.println(productBrandPLP+" falues is "+ProductBrandPDP);
 		Assert.assertEquals(b, Boolean.TRUE);
@@ -272,7 +272,7 @@ public class StepGroups extends UtilityMethod {
 
 	public void Get_Product_Details_in_Wishlist() {
 		// Verify if Product Brand text is displayed in Wishlist page
-		boolean b = wishlist.getProduct_Brand_text().isDisplayed();
+		Boolean b = wishlist.getProduct_Brand_text().isDisplayed();
 		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product Brand text in Wishlist page
 		productBrandWishlist = wishlist.getProduct_Brand_text().getText();
@@ -362,7 +362,7 @@ public class StepGroups extends UtilityMethod {
 
 	public void Get_Product_Details_in_Quick_View() {
 		// Verify if Product Name text is displayed in Quick View page
-		boolean b = quickView.getProduct_Name_text().isDisplayed();
+		Boolean b = quickView.getProduct_Name_text().isDisplayed();
 		Assert.assertEquals(b, Boolean.TRUE);
 		// Get text from Product Name text in Quick View page
 		productNameQuickView = quickView.getProduct_Name_text().getText();
@@ -397,24 +397,24 @@ public class StepGroups extends UtilityMethod {
 	public void Verify_Quick_View_and_Bag_Products_are_same() {
 		// Verify if string firstProductBrandNameBag matches string
 		// productBrandQuickView
-		boolean b = firstProductBrandNameBag.matches(productBrandQuickView);
-		Assert.assertEquals(true, b);
+		Boolean b = firstProductBrandNameBag.matches(productBrandQuickView);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if string firstProductNameBag matches string productNameQuickView
 		b = firstProductNameBag.matches(productNameQuickView);
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if string productDiscountpriceBag contains string
 		// productPriceQuickView
 		b = productActualPriceBag.contains(productPriceQuickView);
 		System.out.println("values");
 		System.out.println(productActualPriceBag);
 		System.out.println(productPriceQuickView);
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 
 	}
 
 	public void Login_through_POP_UP(String Mobile_Number) throws Exception {
-		boolean b = login.getMobile_Number_textfield().isDisplayed();
-		Assert.assertEquals(true, b);
+		Boolean b = login.getMobile_Number_textfield().isDisplayed();
+		Assert.assertEquals(Boolean.TRUE, b);
 		login.getMobile_Number_textfield().sendKeys(Mobile_Number);
 		String otp = Get_OTP_from_Notification_Bar();
 		// Click on Start Shopping button in Login page
@@ -422,20 +422,20 @@ public class StepGroups extends UtilityMethod {
 	}
 
 	public void verfiyforPDP034() {
-		boolean b = productBrandWishlist.matches(ProductBrandPDP);
-		Assert.assertEquals(true, b);
+		Boolean b = productBrandWishlist.matches(ProductBrandPDP);
+		Assert.assertEquals(Boolean.TRUE, b);
 		b = productNameWishlists.matches(productNamePDP);
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 	}
 
 	public void checkValues(String productbrand, String productname) {
-		boolean b = productbrand.matches(ProductBrandPDP);
-		Assert.assertEquals(true, b);
+		Boolean b = productbrand.matches(ProductBrandPDP);
+		Assert.assertEquals(Boolean.TRUE, b);
 		b = productname.matches(productNamePDP);
 //		System.out.println(productname+" null ");
 //		System.out.println(productNamePDP+"  null");
 //		System.out.println("completed");
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 
 	}
 
@@ -453,7 +453,7 @@ public class StepGroups extends UtilityMethod {
 		wait.until(ExpectedConditions.elementToBeClickable(quickView.getADD_TO_BAG_button())).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='GO TO BAG']")));
 		// Verify if GO TO BAG button is displayed in Quick View page
-		boolean b = quickView.getGO_TO_BAG_button().isDisplayed();
+		Boolean b = quickView.getGO_TO_BAG_button().isDisplayed();
 		Assert.assertEquals(b, Boolean.TRUE);
 		// Press PAGE_UP for n times
 		n = 2;
@@ -471,11 +471,11 @@ public class StepGroups extends UtilityMethod {
 		// Navigate to Add Address With Login sg
 		Navigate_to_Add_Address_With_Login();
 		// Verify if Add_new_address_text is displayed in Address page
-		boolean b = address.getAdd_new_address_text().isDisplayed();
-		Assert.assertEquals(true, b);
+		Boolean b = address.getAdd_new_address_text().isDisplayed();
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if FIRST NAME textfield is displayed in Address page
 		b = address.getFirst_Name_textfield().isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if FIRST NAME textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getFirst_Name_textfield()));
 		// Clear text from FIRST NAME textfield in Address page using shortcut key
@@ -490,10 +490,10 @@ public class StepGroups extends UtilityMethod {
 		b = userName.contains(value);
 //		System.out.println(userName);
 //		System.out.println(value);
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if Last_Name_textfield is displayed in Address page
 		b = address.getLast_Name_textfield().isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if Last Name textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getLast_Name_textfield()));
 		// Clear text from Last Name textfield in Address page using shortcut key
@@ -506,10 +506,10 @@ public class StepGroups extends UtilityMethod {
 		value = address.getLast_Name_textfield().getAttribute("value");
 		// Verify if string lastName contains string value
 		b = lastName.contains(value);
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if Mobile_Number_textfield is displayed in Address page
 		b = address.getMobile_Number_textfield().isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if Mobile Number textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getMobile_Number_textfield()));
 		// Clear text from Mobile Number textfield in Address page using shortcut key
@@ -530,7 +530,7 @@ public class StepGroups extends UtilityMethod {
 		js.executeScript("arguments[0].scrollIntoView(true);", address.getUse_Current_Location_link());
 		// Verify if PINCODE_textfield is displayed in Address page
 		b = address.getPINCODE_textfield().isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if PINCODE textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getPINCODE_textfield()));
 		// Clear text from PINCODE textfield in Address page using shortcut key
@@ -541,7 +541,7 @@ public class StepGroups extends UtilityMethod {
 		value = address.getPINCODE_textfield().getAttribute("value");
 		// Verify if string pinCode contains string value
 		b = pinCode.contains(value);
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if House_no__Building_name_textfield is displayed in Address page
 		b = address.getHouse_no__Building_name_textfield().isDisplayed();
 		// Enter houseNumber into House no/ Building name textfield in Address page
@@ -551,12 +551,12 @@ public class StepGroups extends UtilityMethod {
 		value = address.getHouse_no__Building_name_textfield().getAttribute("value");
 		// Verify if string houseNumber contains string value
 		b = houseNumber.contains(value);
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Scroll page vertically until visibility of Pin_code*_text in Address page
 		js.executeScript("arguments[0].scrollIntoView(true);", address.getPin_code_star_text());
 		// Verify if street_textfield is displayed in Address page
 		b = address.getstreet_textfield().isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if street textfield in Address page is clickable
 		wait.until(ExpectedConditions.elementToBeClickable(address.getstreet_textfield()));
 		// Enter streetName into street textfield in Address page
@@ -565,7 +565,7 @@ public class StepGroups extends UtilityMethod {
 		value = address.getstreet_textfield().getAttribute("value");
 //		/Verify if string streetName contains string value
 		b = streetName.contains(value);
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if area_textfield is displayed in Address page
 		b = address.getarea_textfield().isDisplayed();
 		// Verify if area textfield in Address page is clickable
@@ -576,17 +576,17 @@ public class StepGroups extends UtilityMethod {
 		value = address.getarea_textfield().getAttribute("value");
 		// Verify if string Area contains string value
 		b = Area.contains(value);
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Enter landmark into landmark_textfield in Address page
 		address.getlandmark_textfield().sendKeys(landmark);
 		// Get value attribute value of landmark textfield in Address page
 		value = address.getlandmark_textfield().getAttribute("value");
 		// Verify if string landmark contains string value
 		b = landmark.contains(value);
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Verify if Address_Type_text is displayed in Address page
 		b = address.getAddress_Type_text().isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 
 	}
 
@@ -619,13 +619,13 @@ public class StepGroups extends UtilityMethod {
 		// Add product to Bag from Quick View
 		Add_product_to_Bag_from_Quick_View();
 		// Verify if My Bag text is displayed in Bag page
-		boolean b = bag.getMy_Bag_Page_text().isDisplayed();
-		Assert.assertEquals(true, b);
+		Boolean b = bag.getMy_Bag_Page_text().isDisplayed();
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Click on CHECKOUT button in Bag page
 		bag.getCHECKOUT_button().click();
 		// Verify if Checkout text is displayed in Checkout page
 		b = checkout.getCheckout_text().isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// Click on Plus icon in Address page
 		address.getPlus_icon().click();
 		// Press PAGE_DOWN key
@@ -641,14 +641,14 @@ public class StepGroups extends UtilityMethod {
 
 		// Verify if First_Name_textfield is displayed in Address page
 		b = address.getFirst_Name_textfield().isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 		// only 10 steps
 
 	}
 
 	public void checkLast() {
 		Boolean b = address.getSpecific_Address_text(userName).isDisplayed();
-		Assert.assertEquals(true, b);
+		Assert.assertEquals(Boolean.TRUE, b);
 	}
 
 	String offPercentage;
@@ -656,7 +656,7 @@ public class StepGroups extends UtilityMethod {
 
 	public void Add_the_Product_From_Category_to_Bag_with_All_Verifications() throws Exception {
 		// Verify if Pantaloons Logo image is displayed in Home page
-		boolean b = home.getPantaloons_image().isDisplayed();
+		Boolean b = home.getPantaloons_image().isDisplayed();
 		Assert.assertEquals(b, Boolean.TRUE);
 		String category = "WOMEN", subCategoryWeb = "Tees & Tops";
 		Navigate_to_PLP_Page(category, subCategoryWeb);
@@ -687,11 +687,11 @@ public class StepGroups extends UtilityMethod {
 
 		if (b) {
 			// Verify if Product Price text is displayed in PLP page
-			boolean bb = plp.getProduct_Price_text().isDisplayed();
-			Assert.assertEquals(bb, true);
+			Boolean bb = plp.getProduct_Price_text().isDisplayed();
+			Assert.assertEquals(bb, Boolean.TRUE);
 			// Get text from Product Price text in PLP page
 			productPricePLP = plp.getProduct_Price_text().getText();
-			boolean temp = driver.findElement(By.xpath(
+			Boolean temp = driver.findElement(By.xpath(
 					"(//div[contains(@class,'PlpWeb_products-count')]/../../../div[3]/div/div/div/a/div[4]/div[3]/span[1])[1]"))
 					.isDisplayed();
 			System.out.println(temp);
