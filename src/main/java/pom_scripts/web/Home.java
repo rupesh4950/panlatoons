@@ -20,7 +20,7 @@ public class Home extends BasePage {
 	}
 
 	// My Account
-	@FindBy(xpath = "//a[@title='My Account']")
+	@FindBy(xpath = "//div[contains(@class,'header')]//a[@title='My Account']")
 	private WebElement My_Account;
 
 	public WebElement getMy_Account() {

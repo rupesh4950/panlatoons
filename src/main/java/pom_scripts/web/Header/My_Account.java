@@ -12,7 +12,7 @@ public class My_Account extends BasePage{
 		super(driver);
 	}
 	//LOGOUT_button
-	@FindBy(xpath="//*[contains(text(),'OUT')]")
+	@FindBy(xpath="//div[@class='accountMenuHolder']//li[contains(text(),'LOG OUT')]")
 	private WebElement LOGOUT_button;
 	public WebElement getLOGOUT_button() {
 		return LOGOUT_button;

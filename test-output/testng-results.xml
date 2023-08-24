@@ -1,39 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[0:0:45]]>
-    </line>
   </reporter-output>
-  <suite started-at="2023-08-14T15:45:10 IST" name="Default suite" finished-at="2023-08-14T15:45:55 IST" duration-ms="44273">
+  <suite started-at="2023-08-24T12:31:50 IST" name="Suite" finished-at="2023-08-24T12:32:05 IST" duration-ms="14794">
     <groups>
     </groups>
-    <test started-at="2023-08-14T15:45:10 IST" name="Default test" finished-at="2023-08-14T15:45:55 IST" duration-ms="44273">
-      <class name="test_Scripts.HM001">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:test_Scripts.HM001@74e28667]" started-at="2023-08-14T15:45:10 IST" name="beforeSuite" finished-at="2023-08-14T15:45:10 IST" duration-ms="306" status="PASS">
+    <test started-at="2023-08-24T12:31:50 IST" name="Test" finished-at="2023-08-24T12:32:05 IST" duration-ms="14794">
+      <class name="test_Scripts.HM055">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:test_Scripts.HM055@3b0fe47a]" started-at="2023-08-24T12:31:49 IST" name="beforeSuite" finished-at="2023-08-24T12:31:50 IST" duration-ms="474" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.HM001@74e28667]" started-at="2023-08-14T15:45:10 IST" name="browserSetup" finished-at="2023-08-14T15:45:15 IST" duration-ms="4957" status="PASS">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:test_Scripts.HM055@3b0fe47a]" started-at="2023-08-24T12:31:50 IST" name="browserSetup" finished-at="2023-08-24T12:31:50 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="VerifyTheFunctionalityOfCategoriesForNonLoggedInUser()[pri:1, instance:test_Scripts.HM001@74e28667]" started-at="2023-08-14T15:45:15 IST" name="VerifyTheFunctionalityOfCategoriesForNonLoggedInUser" finished-at="2023-08-14T15:45:54 IST" duration-ms="39023" status="PASS">
+        <test-method signature="main()[pri:1, instance:test_Scripts.HM055@3b0fe47a]" started-at="2023-08-24T12:31:50 IST" name="main" finished-at="2023-08-24T12:32:04 IST" duration-ms="14504" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyTheFunctionalityOfCategoriesForNonLoggedInUser -->
-        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.HM001@74e28667]" started-at="2023-08-14T15:45:54 IST" name="CloseApp" finished-at="2023-08-14T15:45:55 IST" duration-ms="220" status="PASS">
+        </test-method> <!-- main -->
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:test_Scripts.HM055@3b0fe47a]" started-at="2023-08-24T12:32:04 IST" name="CloseApp" finished-at="2023-08-24T12:32:05 IST" duration-ms="239" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseApp -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:test_Scripts.HM001@74e28667]" started-at="2023-08-14T15:45:55 IST" name="afterSuite" finished-at="2023-08-14T15:45:55 IST" duration-ms="453" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:test_Scripts.HM055@3b0fe47a]" started-at="2023-08-24T12:32:05 IST" name="afterSuite" finished-at="2023-08-24T12:32:05 IST" duration-ms="768" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[0:0:45]]>
-            </line>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- test_Scripts.HM001 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- test_Scripts.HM055 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

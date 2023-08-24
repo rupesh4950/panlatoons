@@ -9,5 +9,4 @@ public class BasePage extends UtilityMethod{
 	public BasePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-
 }

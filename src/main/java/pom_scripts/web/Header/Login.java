@@ -35,5 +35,19 @@ public class Login extends BasePage{
 	public WebElement getordersImage_image() {
 		return ordersImage_image;
 	}
+	//getOtp
+	@FindBy(xpath="//span[contains(text(),'Get OTP')]")
+	private WebElement GET_OTP_button;
+	public WebElement getGET_OTP_button() {
+		return GET_OTP_button;
+	}
+	//
+	//OTP_textfeild
+		@FindBy(xpath="//input[@type='password']")
+		private WebElement OTP_textfeild;
+		public WebElement getOTP_textfeild() {
+			return OTP_textfeild;
+		}
+	
 	
 }

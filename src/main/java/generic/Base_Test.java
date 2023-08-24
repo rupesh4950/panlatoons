@@ -1,82 +1,51 @@
 package generic;
 
-import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.concurrent.TimeUnit;
+import java.util.Set;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
-import com.google.common.io.Files;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.LogStatus;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import extentReporter.ExtentConfig;
+
 
 public class Base_Test extends UtilityMethod {
-
+	Utility utility=new Utility();
 	@BeforeSuite
 	public void beforeSuite() {
-		ts.suiteStartTime();
-		report = new ExtentReports(REPORTS_PATH + name() + ".pdf");
-		test = report.startTest(TEST_NAME);
+		className="NotEnterd";
+		ExtentConfig.extentConfig();
+		
 	}
 
 	@BeforeClass(alwaysRun = true)
 	public void browserSetup() throws IOException {
-		 ts.classStartTime();
-//		browserName=getValueProperty("browser");
-//		if(browserName.equalsIgnoreCase("chrome")) {
-		WebDriverManager.chromedriver().setup();
-		ChromeOptions cp = new ChromeOptions();
-		// cp.addArguments("--headless");
-		driver = new ChromeDriver(cp);
-		test.log(LogStatus.INFO, "Browser is launched");
-
-		// }
-//		else if(browserName.equalsIgnoreCase("forefox")) {
-//			WebDriverManager.firefoxdriver().setup();
-//			driver=new FirefoxDriver();
-//			test.log(LogStatus.INFO, "Browser is launched");
-//		}
-//		else {
-//			Reporter.log("Enter Valid Browser name");
-//		}
-
-		driver.manage().window().maximize();
-		driver.get("https://www.pantaloons.com/");
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-		wait = new WebDriverWait(driver,TIMEOUTS_WAIT );
-
-		// URL=getValueProperty("https://www.google.com");
-		initObjects();
+		
+		utility.classStartTime();
+		
 	}
-	TakeSCreenShort ts=new TakeSCreenShort();
+
+	TakeSCreenShort ts = new TakeSCreenShort();
+
 	@AfterClass
 	public void CloseApp() throws Exception {
-		ts.getScrennShort(className,bool);
-		driver.quit();
-		ts.clssEndTime();
-		test.log(LogStatus.INFO, "End Test");
-	//	Thread.sleep(20000);
+		
+		utility.clssEndTime();
+		System.out.println(className+" :  "+bool);
+		Set<String> l = driver.getWindowHandles();
+		for (String string : l) {
+			driver.switchTo().window(string);
+			driver.close();
+		}
 	}
 
 	@AfterSuite
 	public void afterSuite() {
-		ts.suiteEndTime();
-		report.endTest(test);
-		report.flush();
+		//report.
+		ExtentConfig.flushExtentReport();
 		System.out.println(arr);
 	}
 }

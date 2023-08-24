@@ -1,22 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="generic.ListenerImp"/>
+  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="test_Scripts.PLP_Web.PLP060">
+      <class name="test_Scripts.My_Bag_Web.MB016">
         <methods>
-          <include name="main"/>
+          <include name="afterSuite"/>
           <include name="CloseApp"/>
           <include name="browserSetup"/>
+          <include name="main"/>
+          <include name="beforeSuite"/>
         </methods>
-      </class> <!-- test_Scripts.PLP_Web.PLP060 -->
+      </class> <!-- test_Scripts.My_Bag_Web.MB016 -->
       <class name="test_Scripts.Checkout_web.CO046">
         <methods>
           <include name="CloseApp"/>
+          <include name="afterSuite"/>
           <include name="browserSetup"/>
+          <include name="beforeSuite"/>
           <include name="main"/>
         </methods>
       </class> <!-- test_Scripts.Checkout_web.CO046 -->
+      <class name="test_Scripts.My_Bag_Web.MB011">
+        <methods>
+          <include name="CloseApp"/>
+          <include name="afterSuite"/>
+          <include name="browserSetup"/>
+          <include name="main"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- test_Scripts.My_Bag_Web.MB011 -->
+      <class name="test_Scripts.My_Orders_Web.MO012">
+        <methods>
+          <include name="CloseApp"/>
+          <include name="afterSuite"/>
+          <include name="browserSetup"/>
+          <include name="main"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- test_Scripts.My_Orders_Web.MO012 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

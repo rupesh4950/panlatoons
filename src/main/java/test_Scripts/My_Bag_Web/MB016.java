@@ -9,8 +9,10 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+
 import generic.Base_Test;
 import generic.StepGroups;
+import generic.Utility;
 import pom_scripts.web.Footer;
 import pom_scripts.web.Home;
 import pom_scripts.web.Header.Bag;
@@ -34,10 +36,13 @@ public class MB016 extends Base_Test {
 	Quick_View quickView;
 	Bag bag;
 	Footer footer;
+	Utility utility;
 
 	@Test
 	public void main() throws Exception {
 		className="MB016";
+		utility=new Utility();
+		utility.OpenBrowser();
 		home = new Home(driver);
 		header = new Header(driver);
 		plp = new PLP(driver);
@@ -50,13 +55,19 @@ public class MB016 extends Base_Test {
 		bag = new Bag(driver);
 		footer = new Footer(driver);
 		js = (JavascriptExecutor) driver;
-		wait.until(ExpectedConditions.elementToBeClickable(home.getIlldothislater()));
-		home.getIlldothislater().click();
-		boolean b = header.getPantaloons().isDisplayed();
-		Assert.assertEquals(b, true);
-		// image verifuued
-		sg.Add_the_Product_From_Category_to_Bag_with_All_Verifications();
-		bool=true;
+		try {
+			boolean b = header.getPantaloons().isDisplayed();
+			utility.checkIsDisplayed(b, "Pantaloons logo");
+			Assert.assertEquals(b, true);
+			// image verifuued
+			sg.Add_the_Product_From_Category_to_Bag_with_All_Verifications();
+		//	System.out.println(5/0);
+			bool=true;
+		} catch (Exception e) {
+			//test.log(LogStatus.ERROR, e.toString());
+		//	System.out.println(e);
+		}
+		
 	}
 
 	

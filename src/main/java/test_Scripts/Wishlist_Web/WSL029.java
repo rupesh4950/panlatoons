@@ -1,5 +1,5 @@
 package test_Scripts.Wishlist_Web;
-
+import static extentReporter.ExtentLogger.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 
 import generic.Base_Test;
 import generic.StepGroups;
+import generic.Utility;
 import pom_scripts.web.Home;
 import pom_scripts.web.Header.Bag;
 import pom_scripts.web.Header.Header;
@@ -23,20 +24,16 @@ public class WSL029 extends Base_Test {
 	@Test(priority = 1)
 	public void main() throws Exception, Exception {
 		className="WSL029";
-		Home home = new Home(driver);
+		Utility u=new Utility();
+		u.OpenBrowser();
 		Header header = new Header(driver);
 		PLP plp = new PLP(driver);
 		js = (JavascriptExecutor) driver;
 		Login login=new Login(driver);
 		PDP pdp = new PDP(driver);
 		StepGroups sg = new StepGroups(driver);
-		Wishlist wishlist = new Wishlist(driver);
-		Quick_View quickView=new Quick_View(driver);
-		Bag bag=new Bag(driver);
-		WebDriverWait w = new WebDriverWait(driver, 1);
-		wait.until(ExpectedConditions.elementToBeClickable(home.getIlldothislater()));
-		home.getIlldothislater().click();
 		boolean b = header.getPantaloons().isDisplayed();
+		u.checkIsDisplayed(b, "Pantaloons logo");
 		Assert.assertEquals(b, true);
 		// image verifcation completed
 		sg.Navigate_to_PLP_Page("WOMEN", "WESTERN WEAR");
@@ -44,21 +41,27 @@ public class WSL029 extends Base_Test {
 		String firstProductLocator = "(//div[contains(@class,'PlpWeb_product-card-content')])";
 		sg.WEB_VerifyUserIsAbleToSelectProductOfAvailableSize(firstProductLocator,sizeLocator,5);
 		b=plp.getBreadcrumb_text().isDisplayed();
+		u.checkIsDisplayed(b, "Breadcrumbs text");
 		Assert.assertEquals(b, true);
 		//Get text from Product Name text in PDP page
 		String productNameInPDP = pdp.getProduct_Name_text().getText();
+		pass("productNameInPDP  :"+productNameInPDP);
 		WebElement ele = pdp.getQUANTITY_text();
 		js.executeScript("arguments[0].scrollIntoView(true);", ele);
+		pass("scrolled till quantity text");
 	//	Wait till ADD TO WISHLIST button in PDP page is visible//
 		wait.until(ExpectedConditions.visibilityOf(pdp.getADD_TO_WISHLIST_button()));
 	//Click on ADD TO WISHLIST button in PDP page
 		pdp.getADD_TO_WISHLIST_button().click();
+		u.isClicked("WISHLIST button");
 		//Verify if Login/Register text is displayed in Login page
 		b=login.getLoginRegister().isDisplayed();
+		u.checkIsDisplayed(b, "LoginRegister");
 		Assert.assertEquals(b, true);
-		sg.Login_through_POP_UP("");
+		sg.Login_through_POP_UP();
 		//Verify if Breadcrumb text is displayed in PLP page
 		b=plp.getBreadcrumb_text().isDisplayed();
+		u.checkIsDisplayed(b, "Breadcrumb text");
 		Assert.assertEquals(b, true);
 		//Press PAGE_DOWN for n times
 		int n=1;
@@ -66,7 +69,8 @@ public class WSL029 extends Base_Test {
 			action.sendKeys(Keys.PAGE_DOWN).perform();
 		}
 		//Verify if REMOVE_FROM_WISHLIST_text is displayed in PDP page
-		pdp.getREMOVE_FROM_WISHLIST_text().isDisplayed();
+		b=pdp.getREMOVE_FROM_WISHLIST_text().isDisplayed();
+		u.checkIsDisplayed(b, "REMOVE_FROM_WISHLIST_text");
 		bool=true;
 		
 	}

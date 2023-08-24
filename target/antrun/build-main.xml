@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <echo message="Gulp!"/>
-  <exec executable="gulp">
-    <arg value="build"/>
-  </exec>
+  <echo message="Hello, maven"/>
 </target>
 </project>

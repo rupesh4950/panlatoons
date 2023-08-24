@@ -21,7 +21,7 @@ public class PLP extends BasePage {
 	}
 
 	// Breadcrumb_text
-	@FindBy(xpath = "//a[@class='breadcrumb']/../..")
+	@FindBy(xpath = "//a[@class='breadcrumb']/ancestor::nav")
 	private WebElement Breadcrumb_text;
 
 	public WebElement getBreadcrumb_text() {
@@ -73,7 +73,7 @@ public class PLP extends BasePage {
 	}
 
 	// Product_Count_text
-	@FindBy(xpath = "//div[contains(@class,\"PlpWeb_products-count_\")]")
+	@FindBy(xpath = "//div[contains(@class,'PlpWeb_products-count_')]")
 	private WebElement Product_Count_text;
 
 	public WebElement getProduct_Count_text() {
@@ -81,7 +81,7 @@ public class PLP extends BasePage {
 	}
 
 	// FILTER_BY_text
-	@FindBy(xpath = "//div[contains(@class,\"MuiGrid-root PlpWeb_filter-section-header\")]")
+	@FindBy(xpath = "//div[contains(@class,'MuiGrid-root PlpWeb_filter-section-header')]")
 	private WebElement FILTER_BY_text;
 
 	public WebElement getFILTER_BY_text() {
@@ -146,7 +146,7 @@ public class PLP extends BasePage {
 	}
 
 	// Product_Brand_text
-	@FindBy(xpath = "//div[contains(@class,\"PlpWeb_product-brand\")]")
+	@FindBy(xpath = "//div[contains(@class,'PlpWeb_product-brand')]")
 	private WebElement Product_Brand_text;
 
 	public WebElement getProduct_Brand_text() {
@@ -154,7 +154,7 @@ public class PLP extends BasePage {
 	}
 
 	// Product_Price_text
-	@FindBy(xpath = "//div[contains(@class,\"PlpWeb_product-price\")]")
+	@FindBy(xpath = "//div[contains(@class,'PlpWeb_product-price')]")
 	private WebElement Product_Price_text;
 
 	public WebElement getProduct_Price_text() {

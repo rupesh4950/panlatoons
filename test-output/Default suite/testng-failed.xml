@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test_Scripts.HM002">
+      <class name="test_Scripts.My_Orders_Web.MO012">
         <methods>
-          <include name="main"/>
-          <include name="afterSuite"/>
           <include name="CloseApp"/>
+          <include name="afterSuite"/>
           <include name="browserSetup"/>
+          <include name="main"/>
           <include name="beforeSuite"/>
         </methods>
-      </class> <!-- test_Scripts.HM002 -->
+      </class> <!-- test_Scripts.My_Orders_Web.MO012 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

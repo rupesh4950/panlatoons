@@ -19,8 +19,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
+
 
 public class UtilityMethod implements FrameworkConstants{
 	
@@ -34,7 +36,7 @@ public class UtilityMethod implements FrameworkConstants{
 	public static Actions action;
 	public static String className="";
 	public static boolean bool;
-	public static long shs,she,sms,sme,sss,sse,ihs,ihe,ims,ime,iss,ise;
+	public static int shs,she,sms,sme,sss,sse,ihs,ihe,ims,ime,iss,ise;
 	public static ArrayList<String >arr=new ArrayList<String>();
 
 
